@@ -1,14 +1,23 @@
 Rails.application.routes.draw do
 
- mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
- 
+  ## RailsAdmin Route
+
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+
   get 'home/index'
+
+  ## Application's Root Path
+
   root  'home#index'
   
+  ## Devise Routes for Authentication
+
   devise_for :admins 
   devise_for :patients
   devise_for :doctors
 
+  ## Entities Routes
+  
   resources :doctors
   resources :patients 
   resources :admins
