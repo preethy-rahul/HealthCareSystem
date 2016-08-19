@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>home</title>
+  <link rel="stylesheet" href="Bootstrap_files/bootstrap.css">
+  <style>
+  .jumbotron{
+  background-color:#FA8072;
+  color:white;
+  }
+  body
+  {
+  	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+    color: white;   
+  	   background-color :#483D8B;
+  }
+  
+  </style>
+  </head>
+  <body>
+ 
+
+<% if !(patient_signed_in? || admin_signed_in? ||  doctor_signed_in?) %>
+ <div class="page-header">
+  <h1><center>Home Page</center></h1>
+
+ <div class="container">
+
+ <div class="jumbotron">
+<p>
+<a href="new_doctor_registration_url"><button type="button" class="btn btn-success">Connect with us</button></a>
+<a href="new_doctor_registration_url"><button type="button" class="btn btn-success">Search here</button></a>
+<a href=new_doctor_registration_url><button type="button" class="btn btn-success">Our doctors</button></a>
+<a href=new_doctor_registration_url><button type="button" class="btn btn-success">About Us</button></a>
+<a href=new_doctor_registration_url><button type="button" class="btn btn-success">Contact Us</button></a>
+
+
+
+<a href="new_doctor_registration"><button type="button" class="btn btn-success">doctor sign up</button></a>
+<a href="new_doctor_session"><button type="button" class="btn btn-success">doctor sign in</button></a>
+<a href="new_patient_registration"><button type="button" class="btn btn-success">patient sign up</button></a>
+
+
+
+
+ <ul class="list-group">
+<li class="list-group-item"><%= link_to 'Doctor sign up', new_doctor_registration_url %></li>
+<li class="list-group-item"> <%= link_to 'Doctor sign in', new_doctor_session_url %></li>
+<li class="list-group-item"><%= link_to 'Patient sign up', new_patient_registration_url %></li>
+<li class="list-group-item"><%= link_to 'Patient  sign in', new_patient_session_url %></li>
+<li class="list-group-item"><%= link_to 'Admin sign up', new_admin_registration_url %></li>
+<li class="list-group-item"><%= link_to 'Admin sign in', new_admin_session_url %></li></ul>
+
+<% end %>
+</p>
+</div>
+</div>
+</div>
+</body>
+</html>

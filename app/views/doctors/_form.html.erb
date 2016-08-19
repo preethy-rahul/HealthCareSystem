@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+
+<h1>Upload Documents</h1>
+<%= form_for @doctor, :html => {:multipart => true} do |f| %>
+<div class="field">
+
+
+	<p>
+	<%= f.label :certificate%> </br>
+    <%= f.file_field :certificates ,multiple:true %>
+  </p>
+  </div>
+  <% if f.object.image? %>
+      <%= image_tag f.object.certificate.url %>
+      <%= f.label :remove_certificate %>
+      <%= f.check_box :remove_certificate %> 
+    <% end %>
+  </di
+  <p>
+   <div class="actions" %>
+  <p><%= f.submit %></p>
+<% end %>
+</div>
+
+</div>
+</body>
+</html>
