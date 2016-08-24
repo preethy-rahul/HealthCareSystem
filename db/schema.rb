@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160819051645) do
+ActiveRecord::Schema.define(version: 20160823104143) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -62,7 +62,7 @@ ActiveRecord::Schema.define(version: 20160819051645) do
     t.string   "city"
     t.string   "state"
     t.string   "username"
-    t.string   "certificate"
+    t.integer  "doctor_category_id"
   end
 
   add_index "doctors", ["email"], name: "index_doctors_on_email", unique: true
@@ -72,6 +72,7 @@ ActiveRecord::Schema.define(version: 20160819051645) do
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "doctor_id"
   end
 
   create_table "patients", force: :cascade do |t|

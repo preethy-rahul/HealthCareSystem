@@ -4,6 +4,7 @@ class CreateDocuments < ActiveRecord::Migration
       t.string :name
 
       t.timestamps null: false
+      t.references :doctor
     end
   end
 end

@@ -31,7 +31,10 @@ class DeviseCreateDoctors < ActiveRecord::Migration
       # t.string   :unlock_token # Only if unlock strategy is :email or :both
       # t.datetime :locked_at
 
+      
+       t.references :doctorcategory
 
+       
       t.timestamps null: false
     end
       add_column :doctors, :name, :string
@@ -45,6 +48,7 @@ class DeviseCreateDoctors < ActiveRecord::Migration
       add_column :doctors, :username, :string
       add_index :doctors, :email,                unique: true
       add_index :doctors, :reset_password_token, unique: true
+      #add_column :doctors, :certificate, :string
     # add_index :doctors, :confirmation_token,   unique: true
     # add_index :doctors, :unlock_token,         unique: true
   end

@@ -1,7 +1,7 @@
 class Doctor < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-   mount_uploader :certificate, CertificateUploader
+   
   belongs_to :doctorcategory
   has_many :documents
 

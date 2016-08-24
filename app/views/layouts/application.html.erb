@@ -36,27 +36,11 @@
 <% content_tag :div, msg, :id => "flash_#{name}" %>
 <% end %> 
 
+
+
 <% if admin_signed_in?  %>
     <% @doctors=Doctor.all %>
     <% @patients=Patient.all %>
-
-
-
-
-    <table>
-    <th>Name</th>
-    <th>Age</th>
-    <tbody>
-    <% @doctors.each do |doctor| %>
-    <tr>
-    <td><%= doctor.name %></td>
-    <td><%= doctor.age %></td>
-    <% end %>
-    </tr>
-    </tbody>
-    </table>
-
-
 
 
     <h2><center>Inside Admin Page </center></h2>
@@ -64,8 +48,13 @@
     <div class="jumbotron">
     <ul><li><h4><%= link_to 'Doctors List' ,'/:admin/:id' %></h4></li>
     <li><h4><%= link_to 'Patients List' ,'admins/show' %></h4></li></ul>
-    <a href="new_doctor_registration_url"><button type="button" class="btn btn-link">My Profile</button></a>
-    <a href=new_doctor_registration_url><button type="button" class="btn btn-link">Sign Out</button></a>
+
+ 
+
+      <%= link_to "Edit Profile",edit_admin_registration_path %>
+  
+      <%= link_to "Sign out", destroy_admin_session_path, method: 'delete' %>
+  
     </div>
 
     <div class="alert alert-info">
@@ -77,22 +66,19 @@
 
 
 
-
-
-
-
 <% if doctor_signed_in?  %> 
- @doctor = Doctor.find(params[:id])
+
+<% @doc=current_doctor%>
 <div class="jumbotron">
 
-<a href="new_doctor_registration_url"><button type="button" class="btn btn-link">My Profile</button></a>
-<a href="edit_doctor_registration_url"><button type="button" class="btn btn-link">Edit Profile</button></a>
-
-<a href="doctors/_form.html.erb" ><button type="button" class="btn btn-link">Upload Documets</button></a>
-<a href=" destroy_doctor_session_url"><button type="button" class="btn btn-link">Sign Out</button></a>
-<a href=new_doctor_registration_url><button type="button" class="btn btn-link">My Calendar</button></a>
-<a href=new_doctor_registration_url><button type="button" class="btn btn-link">My Appointments</button></a>
-
+<%= link_to "My Profile",doctors_path %>
+ 
+  <%= link_to "Edit Profile",edit_doctor_registration_path %>
+  
+  <%= link_to "Upload Documents", destroy_doctor_session_path, method: 'delete' %>
+ 
+  <%= link_to "Sign out", destroy_doctor_session_path, method: 'delete' %>
+ 
 
 </div>
 <div class="alert alert-info">
@@ -108,16 +94,16 @@
 
 <% if patient_signed_in?  %>  
    <div class="jumbotron">
-    @patient = Patient.find(params[:id])
-   <li><h4><%= link_to 'Edit Profile' ,' edit_patient_registration_url' %></h4></li>
+    
+  <%= link_to "Edit Profile",edit_patient_registration_path %>
+  
+ <%= link_to "Sign out", destroy_patient_session_path, method: 'delete' %>
+
+ 
 
 
+ 
 
-  <a href="patients/profile.html.erb"><button type="button" class="btn btn-link">My Profile</button></a>
-   <a href="edit_patient_registration_path"><button type="button" class="btn btn-link">Edit Profile</button></a>
-<a href=new_doctor_registration_url><button type="button" class="btn btn-link">My Appointments</button></a>
-<a href="destroy_patient_session_path"><button type="button" class="btn btn-link">Sign Out</button></a>
-<%= link_to "Sign out", destroy_patient_session_path, method: 'delete' %>
    </div>
   <div class="alert alert-info">
     <strong>Heads up!</strong> In Patient's Home.

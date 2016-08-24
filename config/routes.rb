@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
 
+ 
+  resources :documents
   ## RailsAdmin Route
 
-  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+  mount RailsAdmin::Engine => '/rails_admin', as: 'rails_admin'
 
   get 'home/index'
 
@@ -18,9 +20,10 @@ Rails.application.routes.draw do
 
   ## Entities Routes
   
-  resources :doctors
+  resources :doctors # ,:only => [:index, :upload]
   resources :patients 
   resources :admins
+ 
 
   #, :path_names => { :sign_up => "register"}
 
