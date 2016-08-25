@@ -12,38 +12,19 @@
 
 
   
-<div id="user_nav">
-    <% if admin_signed_in? %>
 
-        <h5><%= link_to "Sign Out", destroy_admin_session_url, :method => :delete %></h5>
-    <% end %>
-</div>
-
-<div id="user_nav">
-    <% if doctor_signed_in? %>
-        <h2><center>Inside Doctor's Page </center></h2>
-        <h5><%= link_to "Sign Out", destroy_doctor_session_url, :method => :delete %></h5>
-    <% end %>
-</div>
-
-<div id="user_nav">
-    <% if patient_signed_in? %>
-        <h2><center>Inside Patient's Page </center></h2>
-        <h5><%= link_to "Sign Out", destroy_patient_session_url, :method => :delete %></h5>
-    <% end %>
-</div>
 <% flash.each do |name, msg| %>
 <% content_tag :div, msg, :id => "flash_#{name}" %>
 <% end %> 
 
 
 
+
 <% if admin_signed_in?  %>
+<h2><center>Inside Admin's Page </center></h2>
     <% @doctors=Doctor.all %>
     <% @patients=Patient.all %>
 
-
-    <h2><center>Inside Admin Page </center></h2>
     <h3>Listing Two Type Users:</h3>
     <div class="jumbotron">
     <ul><li><h4><%= link_to 'Doctors List' ,'/:admin/:id' %></h4></li>
@@ -63,19 +44,17 @@
 <% end %>
 
 
-
-
-
 <% if doctor_signed_in?  %> 
+<h2><center>Inside Doctor's Page </center></h2>
 
 <% @doc=current_doctor%>
 <div class="jumbotron">
 
-<%= link_to "My Profile",doctors_path %>
- 
+<%= link_to "My Profile",doctor_path(current_doctor.id)%>
+
   <%= link_to "Edit Profile",edit_doctor_registration_path %>
   
-  <%= link_to "Upload Documents", destroy_doctor_session_path, method: 'delete' %>
+  <%= link_to "Upload Documents",documents_path %>
  
   <%= link_to "Sign out", destroy_doctor_session_path, method: 'delete' %>
  
@@ -87,22 +66,13 @@
  <% end %>
 
 
-
-
-
-
-
 <% if patient_signed_in?  %>  
+<h2><center>Inside Patients's Page </center></h2>
    <div class="jumbotron">
-    
+    <%= link_to "My Profile",patients_path%>
   <%= link_to "Edit Profile",edit_patient_registration_path %>
   
  <%= link_to "Sign out", destroy_patient_session_path, method: 'delete' %>
-
- 
-
-
- 
 
    </div>
   <div class="alert alert-info">
@@ -112,5 +82,7 @@
  
 
 <%= yield %>
+
+
 </body>
 </html>

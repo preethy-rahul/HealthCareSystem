@@ -12,7 +12,11 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :certificate%><br>
+    <%= f.label :name%><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :certificate , 'Choose certificate'%><br>
     <%= f.file_field :certificate %>
   </div>
   
@@ -20,3 +24,4 @@
     <%= f.submit %>
   </div>
 <% end %>
+

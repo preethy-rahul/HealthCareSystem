@@ -2,7 +2,7 @@ class Doctor < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
    
-  belongs_to :doctorcategory
+  belongs_to :doctor_category
   has_many :documents
 
   devise :database_authenticatable, :registerable,

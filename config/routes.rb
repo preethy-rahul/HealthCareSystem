@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
- 
+  resources :doctorcategories 
   resources :documents
   ## RailsAdmin Route
 
@@ -19,8 +19,8 @@ Rails.application.routes.draw do
   devise_for :doctors
 
   ## Entities Routes
-  
-  resources :doctors # ,:only => [:index, :upload]
+ 
+  resources :doctors 
   resources :patients 
   resources :admins
  
