@@ -10,7 +10,7 @@
 <body>
 <div class="container">
 
-
+<h1>  Doctors have specialisation in <%= @doctorcategory.name %> doctorcategory</h1>
 <table class="table">
 <thead>
   <tr>
@@ -27,15 +27,15 @@
   </tr>
   </thead>
 
- 
-   <% doctorcategory.doctors.each do |doctor| %>
+
+   <% @doctorcategory.doctors.each do |doctor| %>
  <tbody>
  
  <tr class="success">  
       <td><%= doctor.name %></td>
-      <td><%= doctor.age %></td>
+      <td><%= doctor.age %></td>m use 
       <td><%= doctor.sex %></td>
-      <td><%= doctordoctor.phone %></td>
+      <td><%= doctor.phone %></td>
       <td><%= doctor.experience %></td>
       <td><%= doctor.clinic_details%></td>
       <td><%= doctor.city%></td>
@@ -45,6 +45,7 @@
       </tr> 
 
   </tbody>
+  <% end %>
 
   
 </table>

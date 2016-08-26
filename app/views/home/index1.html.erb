@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>home</title>
+  <link rel="stylesheet" href="Bootstrap_files/bootstrap.css">
+<style>
+ .list-group { 
+    margin: 0; 
+    min-width: 400px;
+    width: 60%;
+ }
+  .jumbotron{
+  background-color:#FA8072;
+  color:white;
+  }
+  body
+  {
+  	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+    color: white;   
+  	   background-color :#483D8B;
+  }
+  
+  </style>
+  </head>
+  <body>
+
+  <% if !(patient_signed_in? || admin_signed_in? ||  doctor_signed_in?) %>
+ <div class="page-header">
+  <h1><center>Home Page</center></h1>
+
+ <div class="container">
+
+ <div class="jumbotron">
+
+ <%= link_to 'Doctor Sign Up', new_doctor_registration_url %><button type="button" class="btn btn-link"></button></a>
+ <%= link_to 'Doctor Sign In', new_doctor_session_url %><button type="button" class="btn btn-link"></button></a>
+ <%= link_to 'Patient Sign Up', new_patient_registration_url %><button type="button" class="btn btn-link"></button></a>
+ <%= link_to 'Patient Sign In', new_patient_registration_url %><button type="button" class="btn btn-link"></button></a>
+ <%= link_to 'Admin Sign Up', new_doctor_registration_url %><button type="button" class="btn btn-link"></button></a>
+ <%= link_to 'Admin sign In', new_doctor_registration_url %><button type="button" class="btn btn-link"></button></a>
+
+
+ 
+<ul class="list-group">
+
+  
+  <%@categories.each do |category| %>
+      <li class="list-group-item"><%= link_to category.name ,doctor_category_path(category) %>
+      <%#= category.name %>
+  <% end %>
+</li>
+</ul>
+
+
+
+ 
+<ul class="list-group">
+  <%@categories.each do |category| %>
+<li class="list-group-item"><%= link_to "category.name #{image_tag(/home/admin1/Desktop/preethy/Dentist.jpg)}".html_safe, "doctor_category_path(category) %>
+    <%#= category.name %>
+  <% end %>
+</li>
+</ul>
+     
+
+<%= link_to image_tag("Dentist.jpg") + " some@email.com", 
+                         href: "doctor_category_path(category)" %>
+
+
+
+
+ <div class="container">
+  <ul class="nav nav-tabs">
+   <%= link_to 'Doctor sign up', new_doctor_registration_url %></li>
+     <%= link_to 'Doctor sign in',new_doctor_registration_url%></li>
+    <%=link_to 'Patient sign up', new_patient_registration_url %></li>
+    <%= link_to 'Patient Sign In', new_patient_session_url %></li>
+     <%= link_to 'Admin Sign Up',new_admin_registration_url%></li>
+    <%=link_to 'Admin Sign In', new_admin_session_url %></li>
+    
+    </ul></div>
+  </ul>
+  </div>

@@ -30,14 +30,14 @@
   </thead>
  <tbody>
  <tr class="success">  
-      <td><%= patient.name %></td>
-      <td><%= patient.age %></td>
-      <td><%= patient.sex %></td>
-      <td><%= patient.phone %></td>
-      <td><%= patient.city%></td>
-      <td><%= patient.state %></td>
-     <td><%=  patient.email %></td>
-      <td><%= link_to 'Edit', edit_doctor_path(doctor) %></td>
+      <td><%= @patient.name %></td>
+      <td><%= @patient.age %></td>
+      <td><%= @patient.sex %></td>
+      <td><%= @patient.phone %></td>
+      <td><%= @patient.city%></td>
+      <td><%= @patient.state %></td>
+     <td><%=  @patient.email %></td>
+      </tr>
   </tbody>
   
 </table>

@@ -19,3 +19,4 @@ b=Doctor.create(name:"Hari",age: "40",sex: "Male",phone: "8777498772",experience
 # (1...10).each do |n|
 # 	Patient.create(email: "p#{n}@p#{n}.com", password: "1234", name: "Patient#{n}", age: rand(35..60))
 # end
+c=Patient.create(name: "Anu",age: "34",sex: "Male",phone: "9854535239",city: "kochi",state: "Kerla",username: "anu",email: "anu@gmail.com",password: "anu")

@@ -11,6 +11,10 @@
   background-color:#FA8072;
   color:white;
   }
+ .image-size {
+  max-width: 10px;
+  max-height: 10px;
+}
   body
   {
   	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -33,6 +37,10 @@
 
  <div class="jumbotron">
 <p>
+ 
+
+
+
 <a href="new_doctor_registration_url"><button type="button" class="btn btn-success">Connect with us</button></a>
 <a href="new_doctor_registration_url"><button type="button" class="btn btn-success">Search here</button></a>
 <a href=new_doctor_registration_url><button type="button" class="btn btn-success">Our doctors</button></a>
@@ -50,7 +58,7 @@
 
  <ul class="list-group">
 <li class="list-group-item"><%= link_to 'Doctor sign up', new_doctor_registration_url %></li>
-<li class="list-group-item"> <%= link_to 'Doctor sign in', new_doctor_session_url %></li>
+<li class="list-group-item"> <%= link_to 'Doctor sign in',new_doctor_registration_url%></li>
 <li class="list-group-item"><%= link_to 'Patient sign up', new_patient_registration_url %></li>
 <li class="list-group-item"><%= link_to 'Patient  sign in', new_patient_session_url %></li>
 <li class="list-group-item"><%= link_to 'Admin sign up', new_admin_registration_url %></li>
@@ -62,10 +70,25 @@
 </div>
 </div>
 
-<% @categories.each do |category| %>
-<%= link_to category.name , doctorcategories_path %>
-  <%#= category.name %>
-<% end %>
+
+
+pics as links
+<%= link_to image_tag('dentist.jpg', :size => "70x70" ) , new_doctor_session_path %>
+<%= link_to image_tag('pediatric.jpg', :size => "70x70" ) , new_doctor_session_path %>
+
+
+
+
+
+
+  <%@categories.each do |category| %>
+      <%= link_to category.name ,doctor_category_path(category) %>
+      <%#= category.name %>
+  <% end %>
+
+
+
+<%= link_to "Welcome", home_index_path %>
 
 </body>
 </html>

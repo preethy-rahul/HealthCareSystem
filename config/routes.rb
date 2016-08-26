@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
 
-  resources :doctorcategories 
-  resources :documents
+  
   ## RailsAdmin Route
 
   mount RailsAdmin::Engine => '/rails_admin', as: 'rails_admin'
@@ -24,7 +23,8 @@ Rails.application.routes.draw do
   resources :patients 
   resources :admins
  
-
+  resources :doctor_categories#,:only => [:show]
+  resources :documents
   #, :path_names => { :sign_up => "register"}
 
   #devise_scope :user do
