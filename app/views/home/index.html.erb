@@ -72,9 +72,38 @@
 
 
 
-pics as links
-<%= link_to image_tag('dentist.jpg', :size => "70x70" ) , new_doctor_session_path %>
-<%= link_to image_tag('pediatric.jpg', :size => "70x70" ) , new_doctor_session_path %>
+
+
+
+
+
+
+ <div class="container">
+ <p>
+<div class="panel panel-danger">
+
+  
+<%#= link_to image_tag('dentist.jpg', :size => "70x70" ) , new_doctor_session_path %>
+<%#= link_to image_tag('oncologist.jpg', :size => "70x70" ) , new_doctor_session_path %>
+<%#= link_to image_tag('cardiologist.jpg', :size => "70x70" ) , new_doctor_session_path %>
+<%#= link_to image_tag('neuro.jpg', :size => "70x70" ) , new_doctor_session_path %>
+<%#= link_to image_tag('dermatologist.png', :size => "70x70" ) , new_doctor_session_path %>
+<%#= link_to image_tag('pediatric.jpg', :size => "70x70" ) , new_doctor_session_path %>
+
+
+<%=image_tag('dentist.jpg', :size => "70x70" ) %>
+<%= image_tag('oncologist.jpg', :size => "70x70" ) %>
+<%= image_tag('cardiologist.jpg', :size => "70x70" )%>
+<%= image_tag('neuro.jpg', :size => "70x70" ) %>
+<%= image_tag('dermatologist.png', :size => "70x70" ) %>
+<%= image_tag('pediatric.jpg', :size => "70x70" ) %>
+
+<%#= link_to image_tag('dentist.jpg', :size => "70x70" ) , new_doctor_session_path %>
+<%#= link_to image_tag('pediatric.jpg', :size => "70x70" ) , new_doctor_session_path %>
+
+<%#= link_to image_tag("dentist.jpg", :size => "70x70") + " some@email.com", 
+                         href: "mailto:some@email.com" %></br>
+
 
 
 
@@ -82,13 +111,19 @@ pics as links
 
 
   <%@categories.each do |category| %>
-      <%= link_to category.name ,doctor_category_path(category) %>
+      <%= link_to category.name,doctor_category_path(category) %>
       <%#= category.name %>
   <% end %>
 
 
 
-<%= link_to "Welcome", home_index_path %>
+
+<%= link_to "Welcome",home_index_path %>
+
+</div>
+</p>
+</div>
+
 
 </body>
 </html>

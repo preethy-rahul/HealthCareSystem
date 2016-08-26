@@ -44,10 +44,20 @@
  <%= link_to 'Admin sign In', new_doctor_registration_url %><button type="button" class="btn btn-link"></button></a>
 
 
+ <div class="container">
+ <p>
+<div class="panel panel-danger">
+
+<%=image_tag('dentist.jpg', :size => "70x70" ) %>
+<%= image_tag('oncologist.jpg', :size => "70x70" ) %>
+<%= image_tag('cardiologist.jpg', :size => "70x70" )%>
+<%= image_tag('neuro.jpg', :size => "70x70" ) %>
+<%= image_tag('dermatologist.png', :size => "70x70" ) %>
+<%= image_tag('pediatric.jpg', :size => "70x70" ) %>
+
+
  
 <ul class="list-group">
-
-  
   <%@categories.each do |category| %>
       <li class="list-group-item"><%= link_to category.name ,doctor_category_path(category) %>
       <%#= category.name %>
@@ -56,19 +66,48 @@
 </ul>
 
 
+</div>
+</p>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>
 
- 
-<ul class="list-group">
-  <%@categories.each do |category| %>
-<li class="list-group-item"><%= link_to "category.name #{image_tag(/home/admin1/Desktop/preethy/Dentist.jpg)}".html_safe, "doctor_category_path(category) %>
-    <%#= category.name %>
-  <% end %>
-</li>
-</ul>
-     
 
-<%= link_to image_tag("Dentist.jpg") + " some@email.com", 
-                         href: "doctor_category_path(category)" %>
+
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

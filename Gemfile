@@ -29,6 +29,8 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 #For uploading files
 gem 'carrierwave'
+#for image upload
+gem 'paperclip'
 #Size customizations
 gem 'mini_magick'
 # Use ActiveModel has_secure_password

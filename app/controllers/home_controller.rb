@@ -3,6 +3,8 @@ class HomeController < ApplicationController
 
   def index
   	@categories = DoctorCategory.all
-  end  
+  end 
+  def index1
+  end 
   
  end

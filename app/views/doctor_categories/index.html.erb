@@ -1,4 +1,4 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -8,20 +8,47 @@
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-<div class="container">
-<ul>
-<% @categories.each do |category| %>
-<li> <%= link_to category.name , doctorcategory_path(doctorcategory) %></li>
-  <%= category.name %>
-<% end %>
-</ul>
-</div>
-<div class="container">
+
+
+
+
+
+
+
+<table>
+<thead>
+  <tr>
+    <th>Name</th>
+    <th>image</th>
+   
+    <th colspan="3"></th>
+   
+  </tr>
+  </thead>
+ <tbody>
+  <% @doctorcategories.each do |doctorcategory| %>
+    <tr class = "<%= cycle('list_line_odd','list_line_even')%>">
+      <td><%= doctorcategory.name %></td>
+      <td><%= image_tag doctorcategory.photo.url ,:size => "80x80"%></td>
+      
+      <td><%= link_to 'Show',doctor_category_path(doctorcategory) %></td>
+      
+      <td><%= link_to 'Edit', edit_doctor_category_path(doctorcategory) %></td>
+      <td><%= link_to 'Delete',doctor_category_path(doctorcategory),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+     
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+<%= link_to 'New Category', new_doctor_category_path %>
+
+
+<%#= render @doctorcategories%>
 <%#= link_to "Welcome",      %>
-</div>
-
-
-
-
 </body>
 </html>
+
+
+
