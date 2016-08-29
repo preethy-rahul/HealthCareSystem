@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en"><head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
@@ -15,56 +14,133 @@
   max-width: 10px;
   max-height: 10px;
 }
+ 
+.panel-default > .panel-heading {
+  background: #black;
+}
+
+.panel-footer {
+  width: 20%
+  padding: 10px 15px;
+  background-color: #f5f5f5;
+  border-top: 1px solid #ddd;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+.button {
+    display: block;
+    width: 115px;
+    height: 25px;
+    background: #4E9CAF;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    color:white;
+    font-weight: bold;
+}
+.bs-example{
+      margin: 50px;
+       width: 80%;
+  height: 30%;
+    }
+.carousel{
+    background: #2f4357;
+    margin-top: 50px;
+}
+.carousel .item img{
+    margin: 0 auto; /* Align slide image horizontally center */
+}
+.panel-default {
+    left-margin: 0;
+    height: calc(40vh - 50px);
+    width: 100%;
+}
+carousel-inner > .item > img,
+  .carousel-inner > .item > a > img {
+      width: 70%;
+      margin: auto;
+  }
   body
   {
-  	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 14px;
     line-height: 20px;
-    color: white;   
-  	   background-color :#483D8B;
+    color: white;  
+    font-color :black; 
+       background-color :#483D8B;
   }
   
   </style>
   </head>
   <body>
  
+<nav id="myNavbar" class="navbar navbar-default navbar-inverse navbar-fixed-top" role="navigation">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">MyDoctor</a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#"" target="_blank">Home</a></li>
+                <li><a href=admin_new_session_path target="_blank">About</a></li>
+                <li><a href="#" target="_blank">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <% if !(patient_signed_in? || admin_signed_in? ||  doctor_signed_in?) %>
  <div class="page-header">
   <h1><center>Home Page</center></h1>
-
  <div class="container">
-
  <div class="jumbotron">
 <p>
  
+<li class="btn btn-success "><%= link_to 'Doctor Sign Up',new_doctor_registration_url %></li>
+<li class="btn btn-success "><%= link_to 'Doctor Sign In',new_doctor_session_url %></li>
+<li class="btn btn-success "><%= link_to 'Patient Sign Up',new_doctor_registration_url %></li>
+<li class="btn btn-success "><%= link_to 'Patient Sign In',new_doctor_session_url %></li>
+<li class="btn btn-success "><%= link_to 'Admin sign Up',new_admin_registration_url %></li>
+<li class="btn btn-success "><%= link_to 'Admin Sign In',new_admin_session_url %></li>
 
 
 
-<a href="new_doctor_registration_url"><button type="button" class="btn btn-success">Connect with us</button></a>
-<a href="new_doctor_registration_url"><button type="button" class="btn btn-success">Search here</button></a>
-<a href=new_doctor_registration_url><button type="button" class="btn btn-success">Our doctors</button></a>
 <a href=new_doctor_registration_url><button type="button" class="btn btn-success">About Us</button></a>
 <a href=new_doctor_registration_url><button type="button" class="btn btn-success">Contact Us</button></a>
 
 
 
-<a href="new_doctor_registration"><button type="button" class="btn btn-success">doctor sign up</button></a>
-<a href="new_doctor_session"><button type="button" class="btn btn-success">doctor sign in</button></a>
-<a href="new_patient_registration"><button type="button" class="btn btn-success">patient sign up</button></a>
-
-
-
-
  <ul class="list-group">
 <li class="list-group-item"><%= link_to 'Doctor sign up', new_doctor_registration_url %></li>
-<li class="list-group-item"> <%= link_to 'Doctor sign in',new_doctor_registration_url%></li>
+<li class="list-group-item"> <%= link_to 'Doctor sign in',new_doctor_session_url%></li>
 <li class="list-group-item"><%= link_to 'Patient sign up', new_patient_registration_url %></li>
 <li class="list-group-item"><%= link_to 'Patient  sign in', new_patient_session_url %></li>
 <li class="list-group-item"><%= link_to 'Admin sign up', new_admin_registration_url %></li>
 <li class="list-group-item"><%= link_to 'Admin sign in', new_admin_session_url %></li></ul>
 
-<% end %>
+
 </p>
 </div>
 </div>
@@ -76,54 +152,91 @@
 
 
 
-
+<h3>Our Doctors</h3>
 
  <div class="container">
  <p>
-<div class="panel panel-danger">
-
-  
-<%#= link_to image_tag('dentist.jpg', :size => "70x70" ) , new_doctor_session_path %>
-<%#= link_to image_tag('oncologist.jpg', :size => "70x70" ) , new_doctor_session_path %>
-<%#= link_to image_tag('cardiologist.jpg', :size => "70x70" ) , new_doctor_session_path %>
-<%#= link_to image_tag('neuro.jpg', :size => "70x70" ) , new_doctor_session_path %>
-<%#= link_to image_tag('dermatologist.png', :size => "70x70" ) , new_doctor_session_path %>
-<%#= link_to image_tag('pediatric.jpg', :size => "70x70" ) , new_doctor_session_path %>
+<div class="panel panel-default" ,width="20%">
+   <div class="panel-heading panel-heading-custom">
+       <h3 class="panel-title">Our Doctors</h3>
+   </div>
 
 
-<%=image_tag('dentist.jpg', :size => "70x70" ) %>
-<%= image_tag('oncologist.jpg', :size => "70x70" ) %>
-<%= image_tag('cardiologist.jpg', :size => "70x70" )%>
-<%= image_tag('neuro.jpg', :size => "70x70" ) %>
-<%= image_tag('dermatologist.png', :size => "70x70" ) %>
-<%= image_tag('pediatric.jpg', :size => "70x70" ) %>
-
-<%#= link_to image_tag('dentist.jpg', :size => "70x70" ) , new_doctor_session_path %>
-<%#= link_to image_tag('pediatric.jpg', :size => "70x70" ) , new_doctor_session_path %>
-
-<%#= link_to image_tag("dentist.jpg", :size => "70x70") + " some@email.com", 
-                         href: "mailto:some@email.com" %></br>
+   <div class="panel-body">
+      
 
 
 
 
+<#div class="panel panel-danger">
 
-
-
+ <h3>Our Doctors</h3>
   <%@categories.each do |category| %>
-      <%= link_to category.name,doctor_category_path(category) %>
+      <%#= link_to category.name,doctor_category_path(category) %>
+      <%= link_to image_tag(category.photo,:size =>"70x70" ),doctor_category_path(category)%>
       <%#= category.name %>
+  <% end %>
+
+ </br><%@categories.each do |category| %>
+      <%#= category.name %>
+      <%= link_to category.name,doctor_category_path(category) %>
+ 
   <% end %>
 
 
 
 
-<%= link_to "Welcome",home_index_path %>
 
+<%= link_to "Welcome",home_index_path %>
+</div>
+</div>
 </div>
 </p>
 </div>
+<% end %>
 
 
+
+<<div class="bs-example">
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Carousel indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>   
+        <!-- Wrapper for carousel items -->
+        <div class="carousel-inner">
+            <div class="item active">
+                <img src="flower1.jpg" alt="First Slide">
+            </div>
+            <div class="item">
+                <img src="../images/flower2.jpg" alt="Second Slide">
+            </div>
+            <div class="item">
+                <img src="../images/flower3.jpg" alt="Third Slide">
+            </div>
+        </div>
+        <!-- Carousel controls -->
+        <a class="carousel-control left" href="#myCarousel" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+        <a class="carousel-control right" href="#myCarousel" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+    </div>
+</div>
+
+
+
+
+<div class="row">
+        <div class="col-sm-12">
+            <footer>
+                <p>© Copyright 2016 My Doctor</p>
+            </footer>
+        </div>
+    </div>
 </body>
 </html>
+

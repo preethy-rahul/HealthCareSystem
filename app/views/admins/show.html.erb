@@ -29,8 +29,10 @@
 
  <tbody>
  <% if @patients.present? %>
-  <% @patients.each do |patient| %>
+ <% form_for [:admin, @patients] do |patient| %>
+  <%# @patients.each do |patient| %>
     <tr  class="success">
+  
       <td><%= patient.name %></td>
       <td><%= patient.age %></td>
       <td><%= patient.sex %></td>

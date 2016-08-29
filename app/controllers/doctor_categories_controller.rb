@@ -40,7 +40,7 @@ class DoctorCategoriesController < ApplicationController
          @doctorcategory = DoctorCategory.find(params[:id])
          @doctorcategory.destroy
  
-        redirect_to doctor_category_path
+        redirect_to doctor_categories_path
     end
 
 	def edit

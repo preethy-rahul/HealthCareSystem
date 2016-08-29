@@ -3,6 +3,48 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
 
+  
+  <div class="field">
+    <%= f.label :name%><br />
+    <%= f.text_field :name, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :age %><br />
+    <%= f.text_field :age, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :sex %><br />
+    <%= f.text_field :sex, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :phone %><br />
+    <%= f.text_field :phone, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :experience %><br />
+    <%= f.text_field :email, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :hospital_details %><br />
+    <%= f.text_field :clinic_details, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :city %><br />
+    <%= f.text_field :city, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :state %><br />
+    <%= f.text_field :state, autofocus: true %>
+  </div>
+
+
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true %>

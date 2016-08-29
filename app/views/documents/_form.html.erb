@@ -13,12 +13,11 @@
 
   <div class="field">
     <%= f.label :name%><br>
-    <%= f.text_field :name %>
-  </div>
+    <%= f.file_field :name %>
   <div class="field">
     <%= f.label :certificate , 'Choose certificate'%><br>
     <%= f.file_field :certificate %>
-  </div>
+    </div>
   
   <div class="actions">
     <%= f.submit %>

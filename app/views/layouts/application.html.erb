@@ -20,28 +20,33 @@
 
 
 
+
+
+
 <% if admin_signed_in?  %>
 <h2><center>Inside Admin's Page </center></h2>
     <% @doctors=Doctor.all %>
     <% @patients=Patient.all %>
 
-    <h3>Listing Two Type Users:</h3>
+    
     <div class="jumbotron">
-    <ul><li><h4><%= link_to 'Doctors List' ,'/:admin/:id' %></h4></li>
-    <li><h4><%= link_to 'Patients List' ,'admins/show' %></h4></li></ul>
-
- 
-      <%= link_to "My Profile",admin_path(current_admin.id)%>
+    
+       <ul><li><h4><%= link_to 'Doctors List' ,admins_path %></h4></li>
+       <li><h4><%#= link_to 'Patients List' ,admin_path %></h4></li></ul>
+  
       <%= link_to "Edit Profile",edit_admin_registration_path %>
-  
+      <%= link_to "Doctor category settings", doctor_categories_path %>
       <%= link_to "Sign out", destroy_admin_session_path, method: 'delete' %>
-  
     </div>
-
+   
     <div class="alert alert-info">
     <strong>Heads up!</strong> In Admin's Home.
 </div>
 <% end %>
+
+
+
+
 
 
 <% if doctor_signed_in?  %> 
@@ -66,10 +71,13 @@
  <% end %>
 
 
+
+
+
 <% if patient_signed_in?  %>  
 <h2><center>Inside Patients's Page </center></h2>
    <div class="jumbotron">
-   <%= link_to "My Profile",patient_path(current_patient.id)%>
+   <%= link_to "My Profile", patient_path(current_patient.id)%>
   <%= link_to "Edit Profile",edit_patient_registration_path %>
   
  <%= link_to "Sign out", destroy_patient_session_path, method: 'delete' %>

@@ -1,6 +1,6 @@
 <h1>Editing </h1>
- 
-<%= form_for :doctor_caregory, url: doctor_category_path(@doctorcategory), method: :patch do |f| %>
+<%= form_for @doctorcategory do |f|%>
+<%#= form_for :doctor_caregory, url: doctor_category_path(@doctorcategory), method: :patch do |f| %>
  
   <% if @doctorcategory.errors.any? %>
     <div id="error_explanation">

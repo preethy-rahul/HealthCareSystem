@@ -6,6 +6,16 @@ Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/rails_admin', as: 'rails_admin'
 
   get 'home/index'
+  
+  #jgh
+  #resources :homes do
+  # collection do
+    #get "index2"
+   
+  #end
+#end
+ 
+
 
   ## Application's Root Path
 

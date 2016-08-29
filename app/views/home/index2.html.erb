@@ -35,46 +35,41 @@
  <div class="container">
 
  <div class="jumbotron">
+<li class="btn btn-success "><%= link_to 'Doctor Sign Up',new_doctor_registration_url %></li>
+<li class="btn btn-success "><%= link_to 'Doctor Sign In',new_doctor_session_url %></li>
+<li class="btn btn-success "><%= link_to 'Patient Sign Up',new_doctor_registration_url %></li>
+<li class="btn btn-success "><%= link_to 'Patient Sign In',new_doctor_session_url %></li>
+<li class="btn btn-success "><%= link_to 'Admin sign Up',new_admin_registration_url %></li>
+<li class="btn btn-success "><%= link_to 'Admin Sign In',new_admin_session_url %></li>
 
- <%= link_to 'Doctor Sign Up', new_doctor_registration_url %><button type="button" class="btn btn-link"></button></a>
- <%= link_to 'Doctor Sign In', new_doctor_session_url %><button type="button" class="btn btn-link"></button></a>
- <%= link_to 'Patient Sign Up', new_patient_registration_url %><button type="button" class="btn btn-link"></button></a>
- <%= link_to 'Patient Sign In', new_patient_registration_url %><button type="button" class="btn btn-link"></button></a>
- <%= link_to 'Admin Sign Up', new_doctor_registration_url %><button type="button" class="btn btn-link"></button></a>
- <%= link_to 'Admin sign In', new_doctor_registration_url %><button type="button" class="btn btn-link"></button></a>
 
+</div>
+</div>
+</div>
+<% end %>
 
+<h3>Our Doctors</h3>
  <div class="container">
  <p>
 <div class="panel panel-danger">
 
-<%=image_tag('dentist.jpg', :size => "70x70" ) %>
-<%= image_tag('oncologist.jpg', :size => "70x70" ) %>
-<%= image_tag('cardiologist.jpg', :size => "70x70" )%>
-<%= image_tag('neuro.jpg', :size => "70x70" ) %>
-<%= image_tag('dermatologist.png', :size => "70x70" ) %>
-<%= image_tag('pediatric.jpg', :size => "70x70" ) %>
 
+<% @categories.each do |category| %>
+<%= link_to image_tag(category.photo, :size=>"70x70" ),doctor_category_path %>
+<% end %>
 
  
-<ul class="list-group">
-  <%@categories.each do |category| %>
-      <li class="list-group-item"><%= link_to category.name ,doctor_category_path(category) %>
-      <%#= category.name %>
+</br><% @categories.each do |category| %>
+      <%= link_to category.name,doctor_category_path(category) %></br>
   <% end %>
-</li>
-</ul>
+
 
 
 </div>
 </p>
 </div>
-</div>
-</div>
-</div>
 </body>
 </html>
-
 
 
 
