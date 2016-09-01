@@ -3,7 +3,9 @@ class Doctor < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
    
   belongs_to :doctor_category
-  has_many :documents
+  has_many :documents#,:dependent=>destroy
+  has_many :appointments
+  has_many :slots
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable

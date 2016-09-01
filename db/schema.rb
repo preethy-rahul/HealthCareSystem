@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160826065801) do
+ActiveRecord::Schema.define(version: 20160901051756) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -33,6 +33,15 @@ ActiveRecord::Schema.define(version: 20160826065801) do
 
   add_index "admins", ["email"], name: "index_admins_on_email", unique: true
   add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
+
+  create_table "appointments", force: :cascade do |t|
+    t.date     "appdate"
+    t.time     "apptime"
+    t.integer  "doctor_id"
+    t.integer  "patient_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "doctor_categories", force: :cascade do |t|
     t.string   "name"
@@ -74,9 +83,13 @@ ActiveRecord::Schema.define(version: 20160826065801) do
 
   create_table "documents", force: :cascade do |t|
     t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
     t.integer  "doctor_id"
+    t.string   "certificate_file_name"
+    t.string   "certificate_content_type"
+    t.integer  "certificate_file_size"
+    t.datetime "certificate_updated_at"
   end
 
   create_table "patients", force: :cascade do |t|
@@ -103,5 +116,14 @@ ActiveRecord::Schema.define(version: 20160826065801) do
 
   add_index "patients", ["email"], name: "index_patients_on_email", unique: true
   add_index "patients", ["reset_password_token"], name: "index_patients_on_reset_password_token", unique: true
+
+  create_table "slots", force: :cascade do |t|
+    t.string   "start_time"
+    t.string   "end_time"
+    t.string   "duration"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "doctor_id"
+  end
 
 end

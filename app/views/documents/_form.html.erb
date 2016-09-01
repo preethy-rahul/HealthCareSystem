@@ -11,9 +11,10 @@
     </div>
   <% end %>
 
-  <div class="field">
+ 
+ <div class="field">
     <%= f.label :name%><br>
-    <%= f.file_field :name %>
+    <%= f.text_field :name %>
   <div class="field">
     <%= f.label :certificate , 'Choose certificate'%><br>
     <%= f.file_field :certificate %>
@@ -23,4 +24,3 @@
     <%= f.submit %>
   </div>
 <% end %>
-

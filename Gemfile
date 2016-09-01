@@ -14,6 +14,8 @@ gem 'autoprefixer-rails'
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
+#
+gem 'jquery-ui-rails'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
@@ -35,7 +37,16 @@ gem 'paperclip'
 gem 'mini_magick'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
+## Appointment gem
+gem 'appointments'
+##datepicker
+gem 'bootstrap-datepicker-rails', :require => 'bootstrap-datepicker-rails',
+                              :git => 'git://github.com/Nerian/bootstrap-datepicker-rails.git'
 
+## datepicker gem
+gem 'jquery-ui-rails'
+## get time slots
+gem 'combined_time_select'
 # Use Unicorn as the app server
 # gem 'unicorn'
 

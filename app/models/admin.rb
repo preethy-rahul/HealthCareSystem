@@ -5,10 +5,11 @@ class Admin < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
      
-   # validates :name, presence:true ,format: { with: /\A[a-zA-Z]+\z/,
+    #validates :name, presence:true# ,format: { with: /\A[a-zA-Z]+\z/,
     #message: "only allows letters" }
-    #validates :phone, presence:true, numericality: true
-    #validates :username, presence:true, format: { with: /\A[a-zA-Z]+\z/,
+   # validates :phone, presence:true
+    #validates :phone, numericality:true
+   # validates :username, presence:true#, format: { with: /\A[a-zA-Z]+\z/,
     #message: "only allows letters" }
 end
 

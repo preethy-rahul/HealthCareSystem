@@ -2,6 +2,9 @@
 <html>
 <head>
   <title>Health</title>
+  <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "application" %>
+
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -9,16 +12,9 @@
 <body>
    <p class="notice"><%= notice %></p>
    <p class="alert"><%= alert %></p>
-
-
-  
-
 <% flash.each do |name, msg| %>
 <% content_tag :div, msg, :id => "flash_#{name}" %>
 <% end %> 
-
-
-
 
 
 
@@ -27,15 +23,12 @@
 <h2><center>Inside Admin's Page </center></h2>
     <% @doctors=Doctor.all %>
     <% @patients=Patient.all %>
-
-    
     <div class="jumbotron">
-    
        <ul><li><h4><%= link_to 'Doctors List' ,admins_path %></h4></li>
        <li><h4><%#= link_to 'Patients List' ,admin_path %></h4></li></ul>
-  
       <%= link_to "Edit Profile",edit_admin_registration_path %>
       <%= link_to "Doctor category settings", doctor_categories_path %>
+      <%= link_to "See availabilty",slots_path %>
       <%= link_to "Sign out", destroy_admin_session_path, method: 'delete' %>
     </div>
    
@@ -43,8 +36,6 @@
     <strong>Heads up!</strong> In Admin's Home.
 </div>
 <% end %>
-
-
 
 
 
@@ -60,6 +51,9 @@
   <%= link_to "Edit Profile",edit_doctor_registration_path %>
   
   <%= link_to "Upload Documents",documents_path %>
+  <%= link_to "Fix your Availabilty",new_slot_path %>
+  <%#= link_to "Edit Availabilty",edit_slot_path(slot) %>
+  <%#= link_to "Show my availabilty",slot_path %>
  
   <%= link_to "Sign out", destroy_doctor_session_path, method: 'delete' %>
  
@@ -79,7 +73,7 @@
    <div class="jumbotron">
    <%= link_to "My Profile", patient_path(current_patient.id)%>
   <%= link_to "Edit Profile",edit_patient_registration_path %>
-  
+  <%= link_to "show doctors availabilty",slots_path %>
  <%= link_to "Sign out", destroy_patient_session_path, method: 'delete' %>
 
    </div>

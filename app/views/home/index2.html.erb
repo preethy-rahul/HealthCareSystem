@@ -48,26 +48,97 @@
 </div>
 <% end %>
 
-<h3>Our Doctors</h3>
+
+
+
+
+
+
  <div class="container">
  <p>
+<div class="panel panel-primary" style="width: 12%;">
+   <div class="panel-heading panel-heading-custom">
+       <h3 class="panel-title">Our Doctors-Find Here</h3>
+   </div>
+   <ul class="list-group">
+
+   <div class="panel-body">
 <div class="panel panel-danger">
 
 
-<% @categories.each do |category| %>
-<%= link_to image_tag(category.photo, :size=>"70x70" ),doctor_category_path %>
-<% end %>
-
- 
-</br><% @categories.each do |category| %>
-      <%= link_to category.name,doctor_category_path(category) %></br>
+ <h3>Our Doctors</h3>
+  <%@categories.each do |category| %>
+      <%#= link_to category.name,doctor_category_path(category) %>
+     <li class="list-group-item"> <%= link_to image_tag(category.photo,:size =>"70x70"),doctor_category_path(category)%></li>
+     <%= link_to category.name,doctor_category_path(category) %>
+      <%#= category.name %>
   <% end %>
 
+ </br><%@categories.each do |category| %>
+      
+    <%#= link_to category.name,doctor_category_path(category) %>
+ 
+  <% end %>
+
+</div>
+</div>
+</ul>
+</div>
+</p>
+</div>
+
+
+
+
+
+<div class="bs-example">
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Carousel indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>   
+        <!-- Wrapper for carousel items -->
+        <div class="carousel-inner">
+            <div class="item active">
+            <%= image_tag 'image1.jpg' %>
+              
+            </div>
+            <div class="item">
+                
+                <%= image_tag 'image2.jpg' %>
+            </div>
+            <div class="item">
+                
+                <%= image_tag 'image3.jpg' %>
+            </div>
+             <div class="item">
+                
+                <%= image_tag 'image4.jpg' %>
+            </div>
+        </div>
+        <!-- Carousel controls -->
+        <a class="carousel-control left" href="#myCarousel" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+        <a class="carousel-control right" href="#myCarousel" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+    </div>
+</div>
 
 
 </div>
 </p>
 </div>
+<div class="row">
+        <div class="col-sm-12">
+            <footer>
+                <p>© Copyright 2016 My Doctor</p>
+            </footer>
+        </div>
+    </div>
 </body>
 </html>
 

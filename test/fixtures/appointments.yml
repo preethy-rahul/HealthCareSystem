@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  appdate: 2016-08-30
+  apptime: 2016-08-30 12:37:32
+
+two:
+  appdate: 2016-08-30
+  apptime: 2016-08-30 12:37:32

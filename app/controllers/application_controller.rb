@@ -9,4 +9,10 @@ class ApplicationController < ActionController::Base
 
  #devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:email, :password, :password_confirmation) }
  #end
+
+ before_filter :set_timezone
+
+ def set_timezone
+   Time.zone = 'GMT'
+ end
 end

@@ -3,7 +3,7 @@ class Patient < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-
+    has_many :appointments
 
    #validates :name, presence: true ,format: { with: /\A[a-zA-Z]+\z/,
   #message: "only allows letters" }

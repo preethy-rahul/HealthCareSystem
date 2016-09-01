@@ -1,23 +1,15 @@
 Rails.application.routes.draw do
 
   
+  resources :slots
+  resources :appointments
   ## RailsAdmin Route
 
   mount RailsAdmin::Engine => '/rails_admin', as: 'rails_admin'
 
   get 'home/index'
   
-  #jgh
-  #resources :homes do
-  # collection do
-    #get "index2"
-   
-  #end
-#end
- 
-
-
-  ## Application's Root Path
+   ## Application's Root Path
 
   root  'home#index'
   
