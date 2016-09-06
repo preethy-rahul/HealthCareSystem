@@ -42,7 +42,7 @@
 }
 .bs-example{
       margin: 50px;
-       width: 100%;
+       width: 85%;
   height: 20%;
     }
 .carousel{
@@ -123,17 +123,18 @@ carousel-inner > .item > img,
 <li class="btn btn-success"><%= link_to 'Contact Us',new_admin_session_url %></li>
 <li class="btn btn-success "><%= link_to 'Stay Connected',new_admin_registration_url %></li>
 <li class="btn btn-success "><%= link_to 'Our Motto',new_admin_session_url %></li>
-<a href=new_doctor_registration_url><button type="button" class="btn btn-success">About Us</button></a>
+<%#=<a href=new_doctor_registration_url><button type="button" class="btn btn-success">About Us</button></a> %>
 <% end %>
+</p>
 </section>
-
-
 
 
 <%= image_tag("31.jpg", :alt => "rss feed" ) %>
 
 
+<% if !(patient_signed_in? || admin_signed_in? ||  doctor_signed_in?) %>
 <div class="container">
+
 </br><div class="panel panel-default">
 <div class="panel-heading panel-heading-custom">
        <h3 class="panel-title">Our Doctors-Find Here</h3>
@@ -145,15 +146,6 @@ carousel-inner > .item > img,
      <%= link_to category.name,doctor_category_path(category) %>
       <%#= category.name %>
   <% end %>
-
-
-</p>
-</div>
-</div>
-</div>
-</div>
-
-
 
 
 
@@ -194,21 +186,28 @@ carousel-inner > .item > img,
         </a>
     </div>
 </div>
-
-</div>
-
-</p>
 </div>
 </div>
-
+<% end %>
+                
 
 <div class="row">
         <div class="col-sm-12">
             <footer>
-                <p>© Copyright 2016 My Doctor</p>
+                <p>© Copyright 2016 My Doctors</p>
             </footer>
         </div>
     </div>
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+
 </body>
 </html>
 

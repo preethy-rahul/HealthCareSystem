@@ -3,8 +3,20 @@
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>home</title>
-  <link rel="stylesheet" href="Bootstrap_files/bootstrap.css">
+  <title>appointment</title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+    <script>
+
+  $( function() {
+    $( "#datepicker" ).datepicker();
+  } );
+
+
+  </script>
+  <%#=<link rel="stylesheet" href="Bootstrap_files/bootstrap.css">%>
   <style>
 .panel-default {
     left-margin: 0;
@@ -57,7 +69,6 @@
         <div class="panel-body">
 
 
-
 <%= form_for(@appointment) do |f| %>
   <% if @appointment.errors.any? %>
     <div id="error_explanation">
@@ -73,11 +84,13 @@
 
 
   <div class="field">
-<p>Appointment Date: <input id="datepicker" type="text" name="appdate" format="dd/mm/yyyy" /></p>
-<%#= f.date_field :appdate ,'data-behaviour' => 'datepicker'%>
+  <%= f.label :appointment_Date%>
+  <%= f.text_field :appdate ,:id =>"datepicker",:format =>"dd/mm/yyyy"  %>
+  <%#= <p>Date: <input type="text" id="datepicker" name="appdate" format="dd/mm/yyyy"></p> %>
+  <%#=<p>Appointment Date: <input id="datepicker" type="text" name="appdate" format="dd/mm/yyyy" /></p>
 
-
-
+  
+    <%#= f.date_field :appdate ,'data-behaviour' => 'datepicker'%>
     <%#= f.text_field :appdate, 'data-behaviour' => 'datepicker' %>
     <%#= f.text_field :appdate ,class: 'datepickerfield' %>
     <%#= f.date_select :appdate %>
@@ -102,14 +115,10 @@
 
 
 
-
-  <div class="field">
-    <%#= f.label :apptime %><br>
-    <%#= f.time_select :apptime %>
-  </div>
   <div class="actions">
     <%= f.submit %>
   </div>
+  
 <% end %>
 </div>
 </div>

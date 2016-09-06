@@ -56,18 +56,19 @@ body
 
 
 <p id="notice"><%= notice %></p>
-
+<%= params[:appdate] %>
+<%= params[:apptime] %>
 <p>
   <strong>Appdate:</strong>
 
   <%= @appointment.appdate %>
-
 </p>
   <strong>Apptime:</strong>
 
   <%= @appointment.apptime%>
 
 </p>
+
 
 <%= link_to 'Edit', edit_appointment_path(@appointment) %> |
 <%= link_to 'Back', appointments_path %>

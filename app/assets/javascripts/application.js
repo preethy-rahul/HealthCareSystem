@@ -12,12 +12,18 @@
 //= require turbolinks
 //= require jquery
 //= require jquery_ujs
+//= require jquery-ui
 //= require bootstrap-sprockets
 //= require bootstrap-datepicker
 //= require bootstrap-datepicker/core
 //= require bootstrap-datepicker/locales/bootstrap-datepicker.es.js
 //= require bootstrap-datepicker/locales/bootstrap-datepicker.fr.js
 //= require_tree .
+//= require pikaday
 
 
-
+  $(function() {
+$( "#datepicker" ).datepicker({
+    minDate: 0
+ });
+});

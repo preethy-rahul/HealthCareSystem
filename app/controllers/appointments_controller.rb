@@ -4,17 +4,27 @@ class AppointmentsController < ApplicationController
   # GET /appointments
   # GET /appointments.json
   def index
+
     @appointments = Appointment.all
+
+    if @appointments.length == 0
+      flash[:alert] = "You have no appointments. Create one now to get started."
+
+    end
   end
 
   # GET /appointments/1
   # GET /appointments/1.json
   def show
+   
   end
 
   # GET /appointments/new
   def new
+
     @appointment = Appointment.new
+
+
   end
 
   # GET /appointments/1/edit
@@ -24,8 +34,9 @@ class AppointmentsController < ApplicationController
   # POST /appointments
   # POST /appointments.json
   def create
+  # binding.pry 
     @appointment = Appointment.new(appointment_params)
-
+     
     respond_to do |format|
       if @appointment.save
         format.html { redirect_to @appointment, notice: 'Appointment was successfully created.' }
@@ -36,6 +47,7 @@ class AppointmentsController < ApplicationController
       end
     end
   end
+
 
   # PATCH/PUT /appointments/1
   # PATCH/PUT /appointments/1.json
@@ -62,6 +74,7 @@ class AppointmentsController < ApplicationController
   end
 
   private
+    
     # Use callbacks to share common setup or constraints between actions.
     def set_appointment
       @appointment = Appointment.find(params[:id])
