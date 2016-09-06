@@ -4,8 +4,8 @@ class Admin < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-     
-    #validates :name, presence:true# ,format: { with: /\A[a-zA-Z]+\z/,
+   # validates_format_of :name, with: with: /\A[a-zA-Z]+\z/
+    #validates :name, presence:true,format: { with: /\A[a-zA-Z]+\z/,
     #message: "only allows letters" }
    # validates :phone, presence:true
     #validates :phone, numericality:true

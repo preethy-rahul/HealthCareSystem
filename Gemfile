@@ -43,10 +43,14 @@ gem 'appointments'
 gem 'bootstrap-datepicker-rails', :require => 'bootstrap-datepicker-rails',
                               :git => 'git://github.com/Nerian/bootstrap-datepicker-rails.git'
 
+
+##date and time validation gem
+gem 'validates_timeliness', '~> 4.0'
+
+
+
 #datepick
-
 gem "pikaday-gem"
-
 #datepicker
 gem 'jquery-rails'
 ## datepicker gem

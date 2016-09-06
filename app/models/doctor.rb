@@ -22,7 +22,8 @@ class Doctor < ActiveRecord::Base
     #validates :state,:presence => { :message => ": Only allows letters" }
     #validates :username,presence:true
     validates :email, presence:true
-   
+    validates_format_of :phone, with: /\A(\d{10}|\(?\d{3}\)?[-. ]\d{3}[-.]\d{4})\z/
+    validates_format_of :email, with: /\A[\w]([^@\s,;]+)@(([\w-]+\.)+(com|edu|org|net|gov|mil|biz|info))\z/i
 
    #private
   # def certificate_size_validation

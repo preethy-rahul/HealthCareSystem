@@ -20,3 +20,7 @@ b=Doctor.create(name:"Hari",age: "40",sex: "Male",phone: "8777498772",experience
 # 	Patient.create(email: "p#{n}@p#{n}.com", password: "1234", name: "Patient#{n}", age: rand(35..60))
 # end
 c=Patient.create(name: "Anu",age: "34",sex: "Male",phone: "9854535239",city: "kochi",state: "Kerla",username: "anu",email: "anu@gmail.com",password: "anu")
+(1..5).each do |n|
+	puts "inserting slot#{n}"
+s=Slot.create(start_time:"#{n}",doctor_id: rand(360..390))
+end
