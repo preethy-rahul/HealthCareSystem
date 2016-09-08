@@ -4,10 +4,11 @@ class AdminsController < ApplicationController
 	#@doctor=Doctor.find(params[:id])
 	#@doctors = Doctor.find_by_id(params[:doctor_id])	
 	@doctors = Doctor.all	
+		@patients=Patient.all
  end
  def show
  	#@patients= Patient.find_by_id(params[:patient_id])
- 	patients=Patient.all
+ 	@patients=Patient.all
 	@patient= Patient.find(params[:id])
 
 end

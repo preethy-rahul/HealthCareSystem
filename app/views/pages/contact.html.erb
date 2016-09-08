@@ -51,32 +51,14 @@
 </nav>
 
 
-<h1>My Profile</h1>
+<%= image_tag("doc2.jpg", :alt => "rss feed" ,:width => "40%" ,:align => "right") %></br></br>
+
+</br><div class="panel panel-warning" align="left">
+<div class="panel-heading panel-heading-custom">
+       <h3 class="panel-title">Contact Us</h3>
+        <div class="panel-body"style="min-height: 10; max-height: 10;" width="40%">
+        <h4>Visit Our website:</br>www.mydoctor.com</h4>
 
 
-<table class="table">
-<thead>
-  <tr>
-     <th>Name</th>
-     <th>Age</th>
-     <th>Sex</th>
-     <th>Phone</th>
-     <th>City</th>
-     <th>State</th>
-     <th>Email</th>
-    <th colspan="3"></th>
-  </tr>
-  </thead>
- <tbody>
- <tr class="success">  
-      <td><%= @patient.name %></td>
-      <td><%= @patient.age %></td>
-      <td><%= @patient.sex %></td>
-      <td><%= @patient.phone %></td>
-      <td><%= @patient.city%></td>
-      <td><%= @patient.state %></td>
-     <td><%=  @patient.email %></td>
-      </tr>
-  </tbody>
-  
-</table>
+</body>
+</html>

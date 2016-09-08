@@ -44,11 +44,14 @@ gem 'bootstrap-datepicker-rails', :require => 'bootstrap-datepicker-rails',
                               :git => 'git://github.com/Nerian/bootstrap-datepicker-rails.git'
 
 
+
+
+##static pages
+gem 'high_voltage'
 ##date and time validation gem
 gem 'validates_timeliness', '~> 4.0'
-
-
-
+## rating
+gem 'ratyrate'
 #datepick
 gem "pikaday-gem"
 #datepicker

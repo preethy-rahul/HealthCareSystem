@@ -119,10 +119,11 @@ carousel-inner > .item > img,
 <li class="btn btn-success"><%= link_to 'Patient Sign In',new_patient_session_url %></li>
 <li class="btn btn-success "><%= link_to 'Admin sign Up',new_admin_registration_url %></li>
 <li class="btn btn-success"><%= link_to 'Admin Sign In',new_admin_session_url %></li>
-<li class="btn btn-success"><%= link_to 'About Us',new_admin_registration_url %></li>
-<li class="btn btn-success"><%= link_to 'Contact Us',new_admin_session_url %></li>
-<li class="btn btn-success "><%= link_to 'Stay Connected',new_admin_registration_url %></li>
+<li class="btn btn-success"><%= link_to 'About Us',page_path('about') %></li>
+<li class="btn btn-success"><%= link_to 'Contact Us',page_path('contact')%></li>
+<li class="btn btn-success "><%= link_to 'Stay Connected',page_path('stay') %></li>
 <li class="btn btn-success "><%= link_to 'Our Motto',new_admin_session_url %></li>
+
 <%#=<a href=new_doctor_registration_url><button type="button" class="btn btn-success">About Us</button></a> %>
 <% end %>
 </p>
@@ -130,6 +131,9 @@ carousel-inner > .item > img,
 
 
 <%= image_tag("31.jpg", :alt => "rss feed" ) %>
+
+
+
 
 
 <% if !(patient_signed_in? || admin_signed_in? ||  doctor_signed_in?) %>
@@ -146,6 +150,55 @@ carousel-inner > .item > img,
      <%= link_to category.name,doctor_category_path(category) %>
       <%#= category.name %>
   <% end %>
+
+
+</br><div class="panel panel-primary" align="left">
+<div class="panel-heading panel-heading-custom">
+       <h3 class="panel-title"></h3>
+        <div class="panel-body">
+
+<center><div class="lg-12 md-12">
+        <img srcset="//d304pchb3b61hb.cloudfront.net/img/people/portrait_woman1@2x.jpg 2x" src="//d304pchb3b61hb.cloudfront.net/img/people/portrait_woman1.jpg" alt="Portrait woman">
+        <img srcset="//d304pchb3b61hb.cloudfront.net/img/people/portrait_man1@2x.jpg 2x" src="//d304pchb3b61hb.cloudfront.net/img/people/portrait_man1.jpg" alt="Portrait man">
+        <img srcset="//d304pchb3b61hb.cloudfront.net/img/people/portrait_woman2@2x.jpg 2x" src="//d304pchb3b61hb.cloudfront.net/img/people/portrait_woman2.jpg" alt="Portrait woman">
+        <img srcset="//d304pchb3b61hb.cloudfront.net/img/people/portrait_couple1@2x.jpg 2x" src="//d304pchb3b61hb.cloudfront.net/img/people/portrait_couple1.jpg" alt="Portrait couple">
+        <img srcset="//d304pchb3b61hb.cloudfront.net/img/people/portrait_woman3@2x.jpg 2x" src="//d304pchb3b61hb.cloudfront.net/img/people/portrait_woman3.jpg" alt="Portrait woman">
+        <img srcset="//d304pchb3b61hb.cloudfront.net/img/people/portrait_man2@2x.jpg 2x" src="//d304pchb3b61hb.cloudfront.net/img/people/portrait_man2.jpg" alt="Portrait man">
+       
+      </div></center>
+      </div></div>
+
+
+  
+
+
+    <div class="container">
+    <div class="row">
+      <div class="lg-4 md-12 sm-12">
+        <h2>Over 45 million appointments booked through MyDoctor worldwide!</h2>
+      </div>
+      <div class="lg-8 md-12 sm-12 sw2">
+        <div class="quote_wrap">
+          <div style="left: -100%;" class="slides">
+            
+          <blockquote><p>We use MyDoctor   for booking everything from meeting doctors world wide and how easy and efficient it is to use.</p><footer><strong>Louise Shaw,</strong> Kent Union</footer><i></i></blockquote><blockquote><p>Easy to use reservation system with great features that makes record keeping a breeze, we can easily tailor our sessions to those people who have signed in.</p><footer><strong>Kelsey Lapthorn,</strong> Ashford Run England Leader</footer><i></i></blockquote><blockquote><p>We have used MyDoctor for fixing appointments for many famous doctors and we are  quite happy with the functionality!</p><footer><strong>Julia,</strong> DogWorks Training Inc.</footer><i></i></blockquote><blockquote><p>MyDoctor was up and running smoothly in 15 minutes and fully integrated into my site, in style and format, in about an hour. The flexibility and simplicity is impressive.</p><footer><strong>Kane,</strong> Float Matrix</footer><i></i></blockquote><blockquote><p>MyDoctor satisfied the unique scheduling needs of my drop in child care center while making it more convenient for parents to schedule their own reservations.</p><footer><strong>Mandy James,</strong> The Treehouse Hourly Child Care</footer><i></i></blockquote></div>
+        </div>
+        <i class="sl lg-m"></i>
+        <i class="sr lg-m"></i>
+      </div>
+    </div>
+    <div class="row">
+      <div class="lg-2 md-4 sm-6"><img srcset="//d304pchb3b61hb.cloudfront.net/en/logos/logo_bw_teresa_malins@2x.png 2x" src="//d304pchb3b61hb.cloudfront.net/en/logos/logo_bw_teresa_malins.png" alt="Logo Teresa Malins"/>
+      <div class="lg-2 md-4 sm-6"><img srcset="//d304pchb3b61hb.cloudfront.net/en/logos/logo_bw_dogworks@2x.png 2x" src="//d304pchb3b61hb.cloudfront.net/en/logos/logo_bw_dogworks.png" alt="Logo Dogworks"/></div>
+      <div class="lg-2 md-4 sm-6"><img srcset="//d304pchb3b61hb.cloudfront.net/en/logos/logo_bw_one_to_one@2x.png 2x" src="//d304pchb3b61hb.cloudfront.net/en/logos/logo_bw_one_to_one.png" alt="Logo One to One"/></div>
+      <div class="lg-2 md-4 sm-6"><img srcset="//d304pchb3b61hb.cloudfront.net/en/logos/logo_bw_aberdeen@2x.png 2x" src="//d304pchb3b61hb.cloudfront.net/en/logos/logo_bw_aberdeen.png" alt="Logo Aberdeen"/</div>
+      <div class="lg-2 md-4 sm-6"><img srcset="//d304pchb3b61hb.cloudfront.net/en/logos/logo_bw_treehouse@2x.png 2x" src="//d304pchb3b61hb.cloudfront.net/en/logos/logo_bw_treehouse.png" alt="Logo Treehouse"/></div>
+      <div class="lg-2 md-4 sm-6"><img srcset="//d304pchb3b61hb.cloudfront.net/en/logos/logo_bw_ashford@2x.png 2x" src="//d304pchb3b61hb.cloudfront.net/en/logos/logo_bw_ashford.png" alt="Logo Ashford"/></div>
+    </div>
+    
+  </div>
+
+
 
 
 
@@ -191,6 +244,94 @@ carousel-inner > .item > img,
 <% end %>
                 
 
+
+
+
+
+
+
+
+
+</section>
+
+
+</br><div class="panel panel-primary" align="left" width="100%" >
+<div class="panel-heading panel-heading-custom">
+       <h3 class="panel-title"></h3>
+        <div class="panel-body">
+<section class="col-sm-12">
+            <h1>Interested in using Appointuit at your practice?</h1>
+            <div class="interested-btn">
+            <center><li class="btn btn-success "><%= link_to 'Find Out More',new_doctor_registration_url %></li></center>
+
+             
+        </section>
+        </div>
+        </div>
+        </div>
+
+
+</div>
+</div>
+</div>
+</div>
+
+
+<footer>
+    
+      <section class="container">
+        <div class="row">
+          <section class="col-md-4 appointuit-com">
+          
+            <p>Appointuit Pty Ltd, An Australian company</p>
+            <p>Copyright 2016, All rights reserved</p>
+            <p>ABN: 58 153 559 016</p>
+            <ul>
+              <li><a href="https://play.google.com/store/apps/details?id=com.sibers.appointuit"><img src="https://appointuit.com/home/wp-content/themes/appointuitv2/images/googleplay.png" width="124px" height="37px"></a></li>
+              <li><a href="https://itunes.apple.com/au/app/appointuit/id490457002?mt=8"><img src="https://appointuit.com/home/wp-content/themes/appointuitv2/images/appstore.png" width="124px" height="37px"></a></li>
+            </ul>
+          </section>
+          <section class="col-md-8">
+            <div class="row">
+              <section class="col-sm-3 footer-site">
+                <h5>Product</h5>
+                <ul>
+                  <li class="btn btn-link "><%= link_to 'Practice',new_doctor_registration_url %>
+                  <li class="btn btn-link"><%= link_to 'Support',page_path('contact')%></li>
+
+                  
+                </ul>
+              </section>
+              <section class="col-sm-3 footer-site">
+                <h5>Company</h5>
+                <ul>
+                  <li><a href="#">Privacy</a></li>
+                  <li><a href="#">Blog</a></li>
+                </ul>
+              </section>
+              <section class="col-sm-3 footer-site">
+                <h5>Get in touch</h5>
+                <ul>
+                  <li><a href="#">1300 799 365</a></li>
+                  <li><a href="#">support@MyDoctor.com</a></li>
+                </ul>
+              </section>
+              <section class="col-sm-3 footer-site">
+                <h5>Connect</h5>
+                <ul class="connect">
+                  <li><a href="https://www.facebook.com"><img src="https://appointuit.com/home/wp-content/themes/appointuitv2/images/fb.png"> Facebook</a></li>
+                  <li><a href="https://www.twitter.com"><img src="https://appointuit.com/home/wp-content/themes/appointuitv2/images/twitter.png"> Twitter</a></li>
+                  <li><a href="https://www.youtube.com"><img src="https://appointuit.com/home/wp-content/themes/appointuitv2/images/youtube.png"> YouTube</a></li>
+                </ul>
+              </section>
+            </div>
+          </section>
+        </div>
+      </section>
+    </footer>
+
+
+
 <div class="row">
         <div class="col-sm-12">
             <footer>
@@ -198,15 +339,6 @@ carousel-inner > .item > img,
             </footer>
         </div>
     </div>
-
-</div>
-</div>
-</div>
-</div>
-
-
-
-
 
 </body>
 </html>

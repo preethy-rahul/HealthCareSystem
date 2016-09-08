@@ -24,8 +24,8 @@
     <% @doctors=Doctor.all %>
     <% @patients=Patient.all %>
     <div class="jumbotron">
-      <li><h4><%= link_to 'All Doctors List' ,admins_path %></h4></li>
-       <li><h4><%#= link_to 'Patients List' ,admin_path %></h4></li>
+     <%= link_to 'Listing all doctors and patients' ,admins_path %>
+     <%#= link_to 'Patients List' ,admin_path %>
       <%= link_to "Edit Profile",edit_admin_registration_path %>
       <%= link_to "Doctor category settings", doctor_categories_path %>
       <%= link_to "See availabilty",slots_path %>
@@ -73,6 +73,7 @@
    <div class="jumbotron">
    <%= link_to "My Profile", patient_path(current_patient.id)%>
   <%= link_to "Edit Profile",edit_patient_registration_path %>
+  <%= link_to "show doctors",doctors_path %>
   <%= link_to "show doctors availabilty",slots_path %>
  <%= link_to "Sign out", destroy_patient_session_path, method: 'delete' %>
 

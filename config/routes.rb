@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
 
   
-  resources :slots
-  resources :appointments
+  post '/rate' => 'rater#create', :as => 'rate'
+  
+  
   ## RailsAdmin Route
 
   mount RailsAdmin::Engine => '/rails_admin', as: 'rails_admin'
@@ -24,7 +25,8 @@ Rails.application.routes.draw do
   resources :doctors 
   resources :patients 
   resources :admins
- 
+  resources :slots
+  resources :appointments
   resources :doctor_categories#,:only => [:show]
   resources :documents
   #, :path_names => { :sign_up => "register"}

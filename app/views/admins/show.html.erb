@@ -29,8 +29,8 @@
 
  <tbody>
  <% if @patients.present? %>
- <% form_for [:admin, @patients] do |patient| %>
-  <%# @patients.each do |patient| %>
+ <% #form_for [:admin, @patients] do |patient| %>
+  <% @patients.each do |patient| %>
     <tr  class="success">
   
       <td><%= patient.name %></td>
@@ -40,11 +40,12 @@
       <td><%= patient.city%></td>
       <td><%= patient.state %></td>
       <td><%= patient.email%></td>
+  
+    </tr>
+ 
+  </tbody>
    <% end %> 
       <% end %>
-    </tr>
-  <% end %>
-  </tbody>
 </table>
 </div>
 </body>
