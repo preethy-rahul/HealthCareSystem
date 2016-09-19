@@ -10,6 +10,9 @@ def show
 	@doctor=Doctor.find(params[:id])
 
 	end
+	def new
+		 @doctor = Doctor.new
+	end
  def create
     # Create the user from params
     @doctor= Doctor.new(params[:doctor])

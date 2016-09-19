@@ -74,9 +74,12 @@ carousel-inner > .item > img,
     line-height: 20px;
     color: white;  
     font-color :black; 
-       background-color :white;
+       
+    background-color: white;
+    
+
   }
-  
+ 
   </style>
   </head>
   <body>
@@ -122,7 +125,7 @@ carousel-inner > .item > img,
 <li class="btn btn-success"><%= link_to 'About Us',page_path('about') %></li>
 <li class="btn btn-success"><%= link_to 'Contact Us',page_path('contact')%></li>
 <li class="btn btn-success "><%= link_to 'Stay Connected',page_path('stay') %></li>
-<li class="btn btn-success "><%= link_to 'Our Motto',new_admin_session_url %></li>
+<li class="btn btn-success "><%= link_to 'Our Motto',page_path('about') %></li>
 
 <%#=<a href=new_doctor_registration_url><button type="button" class="btn btn-success">About Us</button></a> %>
 <% end %>
@@ -139,7 +142,7 @@ carousel-inner > .item > img,
 <% if !(patient_signed_in? || admin_signed_in? ||  doctor_signed_in?) %>
 <div class="container">
 
-</br><div class="panel panel-default">
+</br><div class="panel panel-danger">
 <div class="panel-heading panel-heading-custom">
        <h3 class="panel-title">Our Doctors-Find Here</h3>
         <div class="panel-body">
@@ -150,6 +153,8 @@ carousel-inner > .item > img,
      <%= link_to category.name,doctor_category_path(category) %>
       <%#= category.name %>
   <% end %>
+ 
+
 
 
 </br><div class="panel panel-primary" align="left">
@@ -181,24 +186,49 @@ carousel-inner > .item > img,
         <div class="quote_wrap">
           <div style="left: -100%;" class="slides">
             
-          <blockquote><p>We use MyDoctor   for booking everything from meeting doctors world wide and how easy and efficient it is to use.</p><footer><strong>Louise Shaw,</strong> Kent Union</footer><i></i></blockquote><blockquote><p>Easy to use reservation system with great features that makes record keeping a breeze, we can easily tailor our sessions to those people who have signed in.</p><footer><strong>Kelsey Lapthorn,</strong> Ashford Run England Leader</footer><i></i></blockquote><blockquote><p>We have used MyDoctor for fixing appointments for many famous doctors and we are  quite happy with the functionality!</p><footer><strong>Julia,</strong> DogWorks Training Inc.</footer><i></i></blockquote><blockquote><p>MyDoctor was up and running smoothly in 15 minutes and fully integrated into my site, in style and format, in about an hour. The flexibility and simplicity is impressive.</p><footer><strong>Kane,</strong> Float Matrix</footer><i></i></blockquote><blockquote><p>MyDoctor satisfied the unique scheduling needs of my drop in child care center while making it more convenient for parents to schedule their own reservations.</p><footer><strong>Mandy James,</strong> The Treehouse Hourly Child Care</footer><i></i></blockquote></div>
+          <blockquote><p>We use MyDoctor   for booking everything from meeting doctors world wide and how easy and efficient it is to use.</p><footer><strong>Louise Shaw,</strong> Kent Union</footer><i></i></blockquote><blockquote><p>Easy to use reservation system with great features that makes record keeping a breeze, we can easily tailor our sessions to those people who have signed in.</p><footer><strong>Kelsey Lapthorn,</strong> Ashford Run England Leader</footer><i></i></blockquote><blockquote><p>We have used MyDoctor for fixing appointments for many famous doctors and we are  quite happy with the functionality!</p><footer><strong>Julia,</strong> DogWorks Training Inc.</footer><i></i></blockquote><blockquote><p>MyDoctor was up and running smoothly in 15 minutes and fully integrated into my site, in style and format, in about an hour. The flexibility and simplicity is impressive.</p><footer><strong>Kane,</strong> Float Matrix</footer><i></i></blockquote><blockquote></footer><i></i></blockquote></div>
         </div>
         <i class="sl lg-m"></i>
         <i class="sr lg-m"></i>
       </div>
     </div>
     <div class="row">
-      <div class="lg-2 md-4 sm-6"><img srcset="//d304pchb3b61hb.cloudfront.net/en/logos/logo_bw_teresa_malins@2x.png 2x" src="//d304pchb3b61hb.cloudfront.net/en/logos/logo_bw_teresa_malins.png" alt="Logo Teresa Malins"/>
-      <div class="lg-2 md-4 sm-6"><img srcset="//d304pchb3b61hb.cloudfront.net/en/logos/logo_bw_dogworks@2x.png 2x" src="//d304pchb3b61hb.cloudfront.net/en/logos/logo_bw_dogworks.png" alt="Logo Dogworks"/></div>
-      <div class="lg-2 md-4 sm-6"><img srcset="//d304pchb3b61hb.cloudfront.net/en/logos/logo_bw_one_to_one@2x.png 2x" src="//d304pchb3b61hb.cloudfront.net/en/logos/logo_bw_one_to_one.png" alt="Logo One to One"/></div>
-      <div class="lg-2 md-4 sm-6"><img srcset="//d304pchb3b61hb.cloudfront.net/en/logos/logo_bw_aberdeen@2x.png 2x" src="//d304pchb3b61hb.cloudfront.net/en/logos/logo_bw_aberdeen.png" alt="Logo Aberdeen"/</div>
-      <div class="lg-2 md-4 sm-6"><img srcset="//d304pchb3b61hb.cloudfront.net/en/logos/logo_bw_treehouse@2x.png 2x" src="//d304pchb3b61hb.cloudfront.net/en/logos/logo_bw_treehouse.png" alt="Logo Treehouse"/></div>
-      <div class="lg-2 md-4 sm-6"><img srcset="//d304pchb3b61hb.cloudfront.net/en/logos/logo_bw_ashford@2x.png 2x" src="//d304pchb3b61hb.cloudfront.net/en/logos/logo_bw_ashford.png" alt="Logo Ashford"/></div>
+     
+      
+  
     </div>
     
   </div>
 
 
+<section class="container">
+          <div class="icon-content-container">
+            <div class="icon-content">
+              <img src="https://appointuit.com/home/wp-content/themes/appointuitv2/images/icon-new.jpg">
+              <h3 class="icon-title-new">For New &amp; Existing Patients</h3>
+              <p class="icon-text">We assist almost 2000 health professionals to build their patient base and manage their existing demand.</p>
+            </div>
+            <div class="icon-content">
+              <img src="https://appointuit.com/home/wp-content/themes/appointuitv2/images/icon-popular.jpg">
+              <h3 class="icon-title-popular">Most popular medical application</h3>
+              <p class="icon-text">India’s single most popular medical appointment application.</p>
+            </div>
+            <div class="icon-content">
+              <img src="https://appointuit.com/home/wp-content/themes/appointuitv2/images/icon-build.jpg">
+              <h3 class="icon-title-build">Build your new patient base</h3>
+              <p class="icon-text">MyDoctor gives you and your practice the option to allow new patient registration to help grow your new patient base with little effort.</p>
+            </div>
+          </div>
+            
+              <div class="icon-content">
+                <img src="https://appointuit.com/home/wp-content/themes/appointuitv2/images/icon-trusted.jpg">
+                <h3 class="icon-title-trusted">Fully integrated</h3>
+                <p class="icon-text">MyDoctor fully integrates with Best Practice .</p>
+              </div>
+              
+        </div>
+<hr>
+      </section>
 
 
 
@@ -260,7 +290,7 @@ carousel-inner > .item > img,
        <h3 class="panel-title"></h3>
         <div class="panel-body">
 <section class="col-sm-12">
-            <h1>Interested in using Appointuit at your practice?</h1>
+            <h1>Interested in using MyDoctor at your practice?</h1>
             <div class="interested-btn">
             <center><li class="btn btn-success "><%= link_to 'Find Out More',new_doctor_registration_url %></li></center>
 
@@ -271,53 +301,61 @@ carousel-inner > .item > img,
         </div>
 
 
-</div>
-</div>
-</div>
-</div>
 
 
+
+</div>
+</div>
+</div>
+</div>
+</br>
+</br>
+</br>
+</br>
+<div class="panel panel-success" align="left" width="100%" >
+<div class="panel-heading panel-heading-custom">
+       <h3 class="panel-title"></h3>
+        <div class="panel-body">
 <footer>
     
       <section class="container">
         <div class="row">
           <section class="col-md-4 appointuit-com">
-          
-            <p>Appointuit Pty Ltd, An Australian company</p>
-            <p>Copyright 2016, All rights reserved</p>
-            <p>ABN: 58 153 559 016</p>
+         
+           
             <ul>
               <li><a href="https://play.google.com/store/apps/details?id=com.sibers.appointuit"><img src="https://appointuit.com/home/wp-content/themes/appointuitv2/images/googleplay.png" width="124px" height="37px"></a></li>
               <li><a href="https://itunes.apple.com/au/app/appointuit/id490457002?mt=8"><img src="https://appointuit.com/home/wp-content/themes/appointuitv2/images/appstore.png" width="124px" height="37px"></a></li>
             </ul>
           </section>
-          <section class="col-md-8">
+            <mark><section class="col-md-8">
             <div class="row">
               <section class="col-sm-3 footer-site">
-                <h5>Product</h5>
+                <h5>Products</h5>
                 <ul>
-                  <li class="btn btn-link "><%= link_to 'Practice',new_doctor_registration_url %>
-                  <li class="btn btn-link"><%= link_to 'Support',page_path('contact')%></li>
+                  <li ><class="btn btn-link "><%= link_to 'Practice',new_doctor_registration_url %></li>
+                  <li ><class="btn btn-link"><%= link_to 'Support',page_path('support')%></li>
 
-                  
+                 
                 </ul>
               </section>
               <section class="col-sm-3 footer-site">
                 <h5>Company</h5>
                 <ul>
-                  <li><a href="#">Privacy</a></li>
-                  <li><a href="#">Blog</a></li>
+               <li ><a href="#">Privacy</a></li>
+               <li ><a href="#">Blog</a></li>
                 </ul>
               </section>
               <section class="col-sm-3 footer-site">
-                <h5>Get in touch</h5>
+                <h5>Get in Touch</h5>
                 <ul>
                   <li><a href="#">1300 799 365</a></li>
-                  <li><a href="#">support@MyDoctor.com</a></li>
+                 
+                  <li ><class="btn btn-link"><%= link_to 'support@MyDoctor.com',page_path('support')%></li>
                 </ul>
               </section>
               <section class="col-sm-3 footer-site">
-                <h5>Connect</h5>
+                <h5>Connect with us</h5>
                 <ul class="connect">
                   <li><a href="https://www.facebook.com"><img src="https://appointuit.com/home/wp-content/themes/appointuitv2/images/fb.png"> Facebook</a></li>
                   <li><a href="https://www.twitter.com"><img src="https://appointuit.com/home/wp-content/themes/appointuitv2/images/twitter.png"> Twitter</a></li>
@@ -331,12 +369,23 @@ carousel-inner > .item > img,
     </footer>
 
 
+<div class="container">
+    <div class="row">
+      <div class="lg-7 md-12 sm-12 sp">
+        <div class="share_wrap">
+          <div class="i fb"><div fb-iframe-plugin-query="action=like&amp;app_id=444531315581492&amp;container_width=20&amp;href=http%3A%2F%2Fwww.supersaas.com%2F&amp;layout=button_count&amp;locale=en_US&amp;sdk=joey&amp;share=true&amp;show_faces=true" fb-xfbml-state="rendered" class="fb-like fb_iframe_widget" id="fb_share_icon" data-href="http://www.supersaas.com/" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"><span style="vertical-align: bottom; width: 116px; height: 20px;"><iframe class="" src="https://www.facebook.com/plugins/like.php?action=like&amp;app_id=444531315581492&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fconnect%2Fxd_arbiter%2Fr%2FP5DLcu0KGJB.js%3Fversion%3D42%23cb%3Df19a7df0ae45494%26domain%3Dwww.supersaas.com%26origin%3Dhttps%253A%252F%252Fwww.supersaas.com%252Ff24f9325583a77c%26relation%3Dparent.parent&amp;container_width=20&amp;href=http%3A%2F%2Fwww.supersaas.com%2F&amp;layout=button_count&amp;locale=en_US&amp;sdk=joey&amp;share=true&amp;show_faces=true" style="border: medium none; visibility: visible; width: 116px; height: 20px;" title="fb:like Facebook Social Plugin" scrolling="no" allowfullscreen="true" allowtransparency="true" name="f3205f8d585e5ca" width="1000px" frameborder="0" height="1000px"></iframe></span></div></div>
+          <a class="i tw" href="https://twitter.com/SuperSaaS"></a>
+          <div class="i gp"><div id="___plusone_0" style="text-indent: 0px; margin: 0px; padding: 0px; background: transparent none repeat scroll 0% 0%; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 32px; height: 20px;"><iframe title="+1" data-gapiattached="true" src="https://apis.google.com/se/0/_/+1/fastbutton?usegapi=1&amp;annotation=none&amp;size=medium&amp;origin=https%3A%2F%2Fwww.supersaas.com&amp;url=https%3A%2F%2Fwww.supersaas.com%2F&amp;gsrc=3p&amp;ic=1&amp;jsh=m%3B%2F_%2Fscs%2Fapps-static%2F_%2Fjs%2Fk%3Doz.gapi.en.2cCpsn2T1hs.O%2Fm%3D__features__%2Fam%3DAQ%2Frt%3Dj%2Fd%3D1%2Frs%3DAGLTcCMJzbs5oF2lrIAxaA1t9L7SCT7ddA#_methods=onPlusOne%2C_ready%2C_close%2C_open%2C_resizeMe%2C_renderstart%2Concircled%2Cdrefresh%2Cerefresh%2Conload&amp;id=I0_1474277015868&amp;parent=https%3A%2F%2Fwww.supersaas.com&amp;pfname=&amp;rpctoken=49169656" name="I0_1474277015868" id="I0_1474277015868" vspace="0" tabindex="0" style="position: static; top: 0px; width: 32px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 20px;" scrolling="no" marginwidth="0" marginheight="0" hspace="0" width="100%" frameborder="0"></iframe></div></div>
+
+      </div>
+     
+    </div>
+   
 
 <div class="row">
         <div class="col-sm-12">
             <footer>
-                <p>© Copyright 2016 My Doctors</p>
-            </footer>
+             <code><p>MyDoctor @Copyright 2016, All rights reserved</p></code>  
         </div>
     </div>
 

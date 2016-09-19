@@ -10,7 +10,7 @@ class Doctor < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  ratyrate_rateable 'experience'
+  ratyrate_rateable "experience"
 
   #validates_processing_of :certificate
   #validate :certificate_size_validation

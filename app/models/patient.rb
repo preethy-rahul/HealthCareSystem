@@ -9,7 +9,7 @@ class Patient < ActiveRecord::Base
 #def self.current_user=(user)
  # Thread.current[:user] = user
 #end
-
+attr_accessor :current_user
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
     has_many :appointments

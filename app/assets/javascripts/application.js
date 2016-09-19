@@ -18,6 +18,8 @@
 //= require bootstrap-datepicker/core
 //= require bootstrap-datepicker/locales/bootstrap-datepicker.es.js
 //= require bootstrap-datepicker/locales/bootstrap-datepicker.fr.js
+//= require jquery.raty
+//= require ratyrate
 //= require_tree .
 //= require pikaday
 
@@ -27,3 +29,4 @@ $( "#datepicker" ).datepicker({
     minDate: 0
  });
 });
+

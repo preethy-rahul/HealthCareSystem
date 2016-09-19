@@ -10,12 +10,12 @@ class ApplicationController < ActionController::Base
 
  #devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:email, :password, :password_confirmation) }
  #end
+
+
 #before_filter :set_current_user
-
 #def set_current_user
- # Patient.current_user = current_user
+ #Patient.current_user = current_user
 #end
-
 
 
  before_filter :set_timezone
@@ -23,4 +23,5 @@ class ApplicationController < ActionController::Base
  def set_timezone
    Time.zone = 'GMT'
  end
+
 end

@@ -81,30 +81,26 @@
       <td><%= @doctor.city%></td>
       <td><%= @doctor.state %></td>
      <td><%=  @doctor.email %></td>
-      
       </tr> 
   </tbody>
 </table>
 
 
-
+<h4>Rate doctor Here </h4>
 
 <div class="row">
   <div class="small-2 large-2 columns">
-    <%= imdb_style_rating_for @doctor, current_patient%>
+    <%= imdb_style_rating_for @doctor,current_patient %>
   </div>
   <br>
   <div class="small-2 large-4 columns">
-  
-    <%= if current_patient %>
+  <% if current_patient %>
   Doctor Rating:<%= rating_for @doctor, 'experience' , star: 10 %>
-      
   <% end %>
-
-
 
   </div>
 </div>
+
 </div>
 </body>
 </html>

@@ -2,7 +2,7 @@ class PatientsController < ApplicationController
 
 def index
 		
- @patient = Patient.all		
+ @patients = Patient.all		
 end
 
 def show 
@@ -34,8 +34,13 @@ end
     end
   end
 
-
-
+def destroy
+    @patient.destroy
+    respond_to do |format|
+      format.html { redirect_to patients_url, notice: 'Patient was successfully destroyed.' }
+      format.json { head :no_content }
+    end
+   end
 private
     # Use callbacks to share common setup or constraints between actions.
     def set_patient
