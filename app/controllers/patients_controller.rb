@@ -3,6 +3,7 @@ class PatientsController < ApplicationController
 def index
 		
  @patients = Patient.all		
+ 
 end
 
 def show 
@@ -26,8 +27,8 @@ end
     # Create the user from params
     @patient = Patient.new(params[:patient])
     if @patient.save
-      # Deliver the signup email
-      UserNotifier.send_signup_email(@patient).deliver
+      # Deliver the signup email      
+      UserNotifier.send_signup_email(@patient).deliver_later
       redirect_to(@patient, :notice => 'Patient created')
     else
       render :action => 'new'

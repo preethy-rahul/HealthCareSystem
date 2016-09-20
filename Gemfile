@@ -8,8 +8,10 @@ gem 'pry'
 gem 'sqlite3'
 #bootstrap
 gem 'bootstrap-sass'
+#
 gem 'autoprefixer-rails'
-
+#searching tool
+gem 'ransack'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets

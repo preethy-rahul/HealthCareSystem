@@ -109,6 +109,23 @@ carousel-inner > .item > img,
 
 
 
+
+
+</br><div class="panel panel-primary" align="left" width="50%">
+<div class="panel-heading panel-heading-custom">
+
+   <h3 class="panel-title">Search & Book doctors according to your location in Above Search Box</h3>
+        <div class="panel-body">
+
+
+<%= render "location_search_box" %>
+
+</div>
+</div>
+</div>
+
+
+
 <section>
 
 <% if !(patient_signed_in? || admin_signed_in? ||  doctor_signed_in?) %>
@@ -127,10 +144,13 @@ carousel-inner > .item > img,
 <li class="btn btn-success "><%= link_to 'Stay Connected',page_path('stay') %></li>
 <li class="btn btn-success "><%= link_to 'Our Motto',page_path('about') %></li>
 
-<%#=<a href=new_doctor_registration_url><button type="button" class="btn btn-success">About Us</button></a> %>
+
 <% end %>
 </p>
 </section>
+
+
+
 
 
 <%= image_tag("31.jpg", :alt => "rss feed" ) %>
@@ -280,8 +300,6 @@ carousel-inner > .item > img,
 
 
 
-
-
 </section>
 
 
@@ -292,16 +310,13 @@ carousel-inner > .item > img,
 <section class="col-sm-12">
             <h1>Interested in using MyDoctor at your practice?</h1>
             <div class="interested-btn">
-            <center><li class="btn btn-success "><%= link_to 'Find Out More',new_doctor_registration_url %></li></center>
+            <center><li class="btn btn-success "><%= link_to 'Find Out More',page_path('support') %></li></center>
 
              
         </section>
         </div>
         </div>
         </div>
-
-
-
 
 
 </div>
@@ -342,14 +357,15 @@ carousel-inner > .item > img,
               <section class="col-sm-3 footer-site">
                 <h5>Company</h5>
                 <ul>
-               <li ><a href="#">Privacy</a></li>
+                <li ><class="btn btn-link "><%= link_to 'Privacy',new_patient_session_url %></li>
+               
                <li ><a href="#">Blog</a></li>
                 </ul>
               </section>
               <section class="col-sm-3 footer-site">
                 <h5>Get in Touch</h5>
                 <ul>
-                  <li><a href="#">1300 799 365</a></li>
+                  <li><a href="#">1800 799 365</a></li>
                  
                   <li ><class="btn btn-link"><%= link_to 'support@MyDoctor.com',page_path('support')%></li>
                 </ul>

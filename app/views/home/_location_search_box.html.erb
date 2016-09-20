@@ -1,0 +1,15 @@
+<% content_for :search do %>
+  <div class="large-8 small-9 columns">
+  <%= image_tag("search.png", :alt => "rss feed" ,:align => "right") %></br></br>
+
+  <h3>Select your city and explore more</h3>
+  <center><%= search_form_for @search do |f| %>
+
+    <center><%= f.text_field :city_cont, class: "radius-left expand", placeholder: "Doctor's City" %>
+
+  </div>
+    <div class="large-4 small-3 columns">
+    <center>  <%= f.submit "Search", class: "radius-right button" %>
+    </div>
+  <% end %>
+<% end %>

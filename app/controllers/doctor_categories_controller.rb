@@ -1,7 +1,11 @@
 class DoctorCategoriesController < ApplicationController
 	def index
 		@doctorcategories=DoctorCategory.all
-		#@doctorcategory = DoctorCategory.where(id: params[:id]) if params[:id].present?
+		
+
+
+     @search = DoctorCategory.search(params[:q])
+  @doctorcategories = @search.result
 	end
 	def show
 	#@doctorcategory = DoctorCategory.find(params[:doctor_category_id]) 

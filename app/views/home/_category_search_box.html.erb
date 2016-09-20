@@ -1,0 +1,15 @@
+<% content_for :search do %>
+
+  <div class="large-8 small-9 columns">
+
+  <%= search_form_for @search do |f| %>
+   <%= image_tag("search.png", :alt => "rss feed" ,:align => "left") %></br></br>
+   <h3>Search Your Doctor with specialisation</h3>
+    <%= f.text_field :name_cont, class: "radius-left expand", placeholder: "Doctor Specialisation" %>
+  
+  </div>
+    <div class="large-4 small-3 columns">
+      <%= f.submit "Search", class: "radius-right button" %>
+    </div>
+  <% end %>
+<% end %>
