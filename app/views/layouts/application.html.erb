@@ -21,17 +21,17 @@
 
 
 
-
 <% if admin_signed_in? %>
-<h2><center>Inside Admin's Page </center></h2>
+<h2>Inside Admin's Page </center></h2>
     <% @doctors=Doctor.all %>
     <% @patients=Patient.all %>
     <div class="jumbotron">
-     <%= link_to 'Listing all doctors and patients' ,admins_path %>
+     <h4><%= link_to 'Listing all doctors and patients' ,admins_path %>
       <%= link_to "Edit Profile",edit_admin_registration_path %>
       <%= link_to "Doctor category settings", doctor_categories_path %>
       <%= link_to "See availabilty",slots_path %>
-      <%= link_to "Sign out", destroy_admin_session_path, method: 'delete' %>
+      <%= link_to 'All Appointments',appointments_path %>
+      <%= link_to "Sign out", destroy_admin_session_path, method: 'delete' %></h4>
     </div>
    
     <div class="alert alert-info">
@@ -42,12 +42,12 @@
 
 
 <% if doctor_signed_in?  %> 
-<h2><center>Inside Doctor's Page </center></h2>
+<h2>Inside Doctor's Page </center></h2>
 
 <% @doc=current_doctor%>
 <div class="jumbotron">
 
-  <%= link_to "My Profile",doctor_path(current_doctor.id) ,:target => "_blank"%>
+  <h4><%= link_to "My Profile",doctor_path(current_doctor.id) ,:target => "_blank"%>
   <%= link_to "Edit Profile",edit_doctor_registration_path %>
   <%= link_to "Upload Documents",new_document_path %>
   <%= link_to "Fix your Availabilty",new_slot_path %>
@@ -55,7 +55,7 @@
   <%= link_to "My appointments",appointment_path(current_doctor) %>
   <%#= link_to "Show my availabilty",slot_path %>
  
-  <%= link_to "Sign out", destroy_doctor_session_path, method: 'delete' %>
+  <%= link_to "Sign out", destroy_doctor_session_path, method: 'delete' %></h4>
  
 
 </div>
@@ -67,15 +67,14 @@
  
 
 <% if patient_signed_in?  %>  
-<h2><center>Inside Patients's Page </center></h2>
+<h2>Inside Patients's Page </center></h2>
    <div class="jumbotron">
-   <%= link_to "My Profile", patient_path(current_patient.id)%>
+  <h4><%= link_to "My Profile", patient_path(current_patient.id)%>
   <%= link_to "Edit Profile",edit_patient_registration_path %>
   <%= link_to "show doctors",doctors_path %>
   <%= link_to "show doctors availabilty",slots_path %>
   <%= link_to "Fix appointment",new_appointment_path %>
-  <%= link_to "Sign out", destroy_patient_session_path, method: 'delete' %>
-
+  <%= link_to "Sign out", destroy_patient_session_path, method: 'delete' %></h4>
    </div>
   <div class="alert alert-info">
     <strong>Heads up!</strong> In Patient's Home.

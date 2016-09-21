@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160908050404) do
+ActiveRecord::Schema.define(version: 20160921103235) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -52,6 +52,22 @@ ActiveRecord::Schema.define(version: 20160908050404) do
     t.datetime "updated_at"
   end
 
+  create_table "delayed_jobs", force: :cascade do |t|
+    t.integer  "priority",   default: 0, null: false
+    t.integer  "attempts",   default: 0, null: false
+    t.text     "handler",                null: false
+    t.text     "last_error"
+    t.datetime "run_at"
+    t.datetime "locked_at"
+    t.datetime "failed_at"
+    t.string   "locked_by"
+    t.string   "queue"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "delayed_jobs", ["priority", "run_at"], name: "delayed_jobs_priority"
+
   create_table "doctor_categories", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at",         null: false
@@ -85,6 +101,7 @@ ActiveRecord::Schema.define(version: 20160908050404) do
     t.string   "state"
     t.string   "username"
     t.integer  "doctor_category_id"
+    t.boolean  "approved"
   end
 
   add_index "doctors", ["email"], name: "index_doctors_on_email", unique: true

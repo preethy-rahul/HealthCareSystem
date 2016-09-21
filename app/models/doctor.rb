@@ -27,7 +27,21 @@ class Doctor < ActiveRecord::Base
     validates_format_of :phone, with: /\A(\d{10}|\(?\d{3}\)?[-. ]\d{3}[-.]\d{4})\z/
     validates_format_of :email, with: /\A[\w]([^@\s,;]+)@(([\w-]+\.)+(com|edu|org|net|gov|mil|biz|info))\z/i
 
+
+
+  def active_for_authentication? 
+    super && approved? 
+  end 
+
+  def inactive_message 
+    if !approved? 
+      :not_approved 
+    else 
+      super # Use whatever other message 
+    end 
+  end
    #private
+  
   # def certificate_size_validation
      #errors[:certificate]<<"Should be less than 70KB " if certificate.size >0.7.megabytes
      #end

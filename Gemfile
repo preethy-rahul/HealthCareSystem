@@ -37,6 +37,10 @@ gem 'carrierwave'
 gem 'paperclip'
 #Size customizations
 gem 'mini_magick'
+# Use delayed job for running background jobs
+gem 'delayed_job_active_record'
+# Need daemons to start delayed_job
+gem 'daemons'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 ## Appointment gem

@@ -1,15 +1,21 @@
+
 <% content_for :search do %>
   <div class="large-8 small-9 columns">
   <%= image_tag("search.png", :alt => "rss feed" ,:align => "right") %></br></br>
-
-  <h3>Select your city and explore more</h3>
+    <h3>Select your city and explore more</h3>
+  
   <center><%= search_form_for @search do |f| %>
 
-    <center><%= f.text_field :city_cont, class: "radius-left expand", placeholder: "Doctor's City" %>
+     <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Search doctors based on your location.....">Search Here & Explore More
+</button>
 
-  </div>
-    <div class="large-4 small-3 columns">
-    <center>  <%= f.submit "Search", class: "radius-right button" %>
+   <%= f.text_field :city_cont, class: "radius-left expand", placeholder: "Type your City" %>
+   </div>
+   
+    
+   <center><button type="submit" class="btn btn-success">
+  <i class="icon-user icon-white"></i> Search
+</button>
     </div>
   <% end %>
 <% end %>

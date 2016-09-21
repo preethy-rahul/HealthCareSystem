@@ -16,15 +16,20 @@ attr_accessor :current_user
     has_many :doctors
     
    ratyrate_rater
-   #validates :name, presence: true ,format: { with: /\A[a-zA-Z]+\z/,
-  #message: "only allows letters" }
-  #validates :age, presence: true, numericality: true
-   ##message: "only allows letters" }
-   #validates :phone, presence: true, numericality: true
-  #validates :city,presence: true , format: { with: /\A[a-zA-Z]+\z/,
-    #message: "only allows letters" }
+
+=begin
+   validates :name, presence: true ,format: { with: /\A[a-zA-Z]+\z/,
+  message: "only allows letters" }
+  validates :age, presence: true, numericality: true
+   message: "only allows letters" }
+   validates :phone, presence: true, numericality: true
+  validates :city,presence: true , format: { with: /\A[a-zA-Z]+\z/,
+    message: "only allows letters" }
     
-   # validates: state, presence: true, format: { with: /\A[a-zA-Z]+\z/,
-    #message: "only allows letters" }
-    #validates :username, presence: true ,length: { maximum: 10 },
-end
+    validates: state, presence: true, format: { with: /\A[a-zA-Z]+\z/,
+    message: "only allows letters" }
+    validates :username, presence: true ,length: { maximum: 10 }
+=end
+
+  end
+
