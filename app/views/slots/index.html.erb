@@ -80,16 +80,19 @@
         <td><%= slot.end_time %></td>
         <td><%= slot.duration %></td>
         <td><%= link_to 'Show', slot %></td>
+        <% if !(patient_signed_in?) %>
         <td><%= link_to 'Edit', edit_slot_path(slot) %></td>
         <td><%= link_to 'Destroy', slot, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Slot', new_slot_path %>
+<% if !(patient_signed_in?) %>
+ <%= link_to 'New Slot', new_slot_path %>
+<% end %>
 </div>
 </div>
 </div>

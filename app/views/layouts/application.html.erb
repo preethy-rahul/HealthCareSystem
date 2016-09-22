@@ -26,12 +26,14 @@
     <% @doctors=Doctor.all %>
     <% @patients=Patient.all %>
     <div class="jumbotron">
-     <h4><%= link_to 'Listing all doctors and patients' ,admins_path %>
+     <h4><%= link_to 'All doctors and patients' ,admins_path %>
       <%= link_to "Edit Profile",edit_admin_registration_path %>
       <%= link_to "Doctor category settings", doctor_categories_path %>
+      <%= link_to 'Doctor Approval',doctors_path %>
       <%= link_to "See availabilty",slots_path %>
       <%= link_to 'All Appointments',appointments_path %>
       <%= link_to "Sign out", destroy_admin_session_path, method: 'delete' %></h4>
+ 
     </div>
    
     <div class="alert alert-info">

@@ -27,11 +27,29 @@ class Doctor < ActiveRecord::Base
     validates_format_of :phone, with: /\A(\d{10}|\(?\d{3}\)?[-. ]\d{3}[-.]\d{4})\z/
     validates_format_of :email, with: /\A[\w]([^@\s,;]+)@(([\w-]+\.)+(com|edu|org|net|gov|mil|biz|info))\z/i
 
+  def self.pending
+  where(approved: 'pending')
+end
+
+def self.approved
+  where(approved: 'approved')
+end
 
 
-  def active_for_authentication? 
+
+def activate_doctor
+  self.approved = 'true'
+  self.save
+end
+
+def reject_doctor
+
+  self.approved = 'false'
+  self.save
+end
+def active_for_authentication? 
     super && approved? 
-  end 
+end 
 
   def inactive_message 
     if !approved? 
