@@ -53,7 +53,6 @@
   <%= link_to "Edit Profile",edit_doctor_registration_path %>
   <%= link_to "Upload Documents",new_document_path %>
   <%= link_to "Fix your Availabilty",new_slot_path %>
-
   <%= link_to "My appointments",appointment_path(current_doctor) %>
   <%#= link_to "Show my availabilty",slot_path %>
  
@@ -75,7 +74,7 @@
   <%= link_to "Edit Profile",edit_patient_registration_path %>
   <%= link_to "show doctors",doctors_path %>
   <%= link_to "show doctors availabilty",slots_path %>
-  <%= link_to "Fix appointment",new_appointment_path %>
+  <%= link_to "Fix appointment",doctors_path %>
   <%= link_to "Sign out", destroy_patient_session_path, method: 'delete' %></h4>
    </div>
   <div class="alert alert-info">

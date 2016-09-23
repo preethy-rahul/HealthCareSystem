@@ -50,8 +50,6 @@
     <tr>
 
       <th>Name</th>
-      <th>Age</th>
-      <th>Gender</th>
       <th>Experience</th>
       <th>clinic</th>
      <td>         </td>
@@ -64,8 +62,6 @@
     <% @doctors.each do |doctor| %>
       <tr>
         <td><%= doctor.name %></td>
-        <td><%= doctor.age%></td>
-        <td><%= doctor.sex%></td>
         <td><%= doctor.experience%></td>
         <td><%= doctor.clinic_details%></td>
         <td><%= link_to 'Show', doctor %></td>

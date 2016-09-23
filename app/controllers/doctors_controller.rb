@@ -15,6 +15,7 @@ class DoctorsController < ApplicationController
 		@doctors = Doctor.all
 	  @search = Doctor.search(params[:q])
   @doctors = @search.result
+  @appontments=Appointment.all
 end
 
 

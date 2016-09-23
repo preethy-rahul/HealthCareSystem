@@ -27,7 +27,7 @@ Rails.application.routes.draw do
   resources :admins
   resources :slots
   resources :appointments
-  resources :doctor_categories#,:only => [:show]
+  resources :doctor_categories
   resources :documents
   #, :path_names => { :sign_up => "register"}
 
